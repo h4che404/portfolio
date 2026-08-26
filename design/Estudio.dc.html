@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #7d2b1f; text-decoration: none; }
+    a:hover { color: #4a1810; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; min-height: 1500px; background: #f4f1ea; color: #16130f; font-family: 'Archivo', system-ui, sans-serif; display: flex; flex-direction: column;">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 32px 96px; border-bottom: 1px solid #ddd7cb;">
+    <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em;">Juan Cruz Elias Martin</span>
+    <div style="display: flex; gap: 32px; font-size: 14px; color: #6b6355;">
+      <a href="#" style="color: #6b6355;">Trabajo</a>
+      <a href="#" style="color: #6b6355;">Sobre mí</a>
+      <a href="#" style="color: #16130f; font-weight: 500;">Contacto</a>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 128px 96px 112px 96px; border-bottom: 1px solid #ddd7cb;">
+    <div style="grid-column: span 8; display: flex; flex-direction: column; gap: 36px;">
+      <p style="margin: 0; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #7d2b1f; font-weight: 600;">Desarrollador Full Stack · Argentina</p>
+      <h1 style="margin: 0; font-size: 78px; font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; text-wrap: pretty;">Diseño y construyo sistemas completos, no pantallas sueltas.</h1>
+    </div>
+    <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 32px; justify-content: flex-end;">
+      <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; line-height: 1.6; color: #4a4438;">Hace dos años que construyo software. Hoy estoy levantando ID-Night: una plataforma de identidad y control de acceso para la noche, con backend en .NET, biometría propia y apps móviles multiplataforma.</p>
+      <div style="display: flex; gap: 14px;">
+        <a href="#" style="display: inline-block; padding: 14px 26px; background: #16130f; color: #f4f1ea; font-size: 14px; font-weight: 500; border-radius: 3px;">Ver ID-Night</a>
+        <a href="#" style="display: inline-block; padding: 14px 26px; border: 1px solid #c9c2b4; color: #16130f; font-size: 14px; font-weight: 500; border-radius: 3px;">Contacto</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 64px; padding: 112px 96px 120px 96px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: baseline;">
+      <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 14px;">
+        <p style="margin: 0; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #7d2b1f; font-weight: 600;">Caso principal</p>
+        <h2 style="margin: 0; font-size: 48px; font-weight: 600; letter-spacing: -0.03em; line-height: 1;">ID-Night</h2>
+      </div>
+      <div style="grid-column: span 8; display: flex; flex-direction: column; gap: 14px;">
+        <p style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 21px; line-height: 1.55; color: #4a4438;">Identidad verificada y control de acceso para boliches y eventos. En la puerta se decide en segundos si alguien entra, y hoy esa decisión se toma mirando un DNI a mano.</p>
+        <span style="align-self: flex-start; margin-top: 8px; font-size: 12px; padding: 6px 14px; border: 1px solid #c9c2b4; border-radius: 999px; color: #6b6355;">En desarrollo activo · buscando primeros clientes</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid #ddd7cb;">
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 48px 0; border-bottom: 1px solid #ddd7cb;">
+        <div style="grid-column: span 4; display: flex; gap: 20px; align-items: flex-start;">
+          <span style="font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; color: #a8a091;">01</span>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 600; line-height: 1.22; letter-spacing: -0.02em;">La biometría vive fuera del backend, y es stateless</h3>
+        </div>
+        <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 10px;">
+          <p style="margin: 0; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a091;">Decisión</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3a352c;">Un microservicio propio en Python/FastAPI que corre YuNet + SFace sobre ONNX y solo calcula embeddings y comparaciones. No guarda nada.</p>
+        </div>
+        <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 10px;">
+          <p style="margin: 0; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d2b1f;">Lo que cuesta</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #6b6355;">Un salto de red y una superficie más para operar. A cambio, la biometría escala por separado y los tests corren sin levantar un solo modelo.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 48px 0; border-bottom: 1px solid #ddd7cb;">
+        <div style="grid-column: span 4; display: flex; gap: 20px; align-items: flex-start;">
+          <span style="font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; color: #a8a091;">02</span>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 600; line-height: 1.22; letter-spacing: -0.02em;">Clean Architecture, con el dominio partido en módulos</h3>
+        </div>
+        <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 10px;">
+          <p style="margin: 0; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #a8a091;">Decisión</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3a352c;">Domain, Application, Infrastructure y Api separados, con las reglas de negocio sin ninguna dependencia sobre Entity Framework ni sobre ASP.NET.</p>
+        </div>
+        <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 10px;">
+          <p style="margin: 0; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7d2b1f;">Lo que cuesta</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #6b6355;">Más ceremonia y más archivos que un CRUD directo. Se justifica porque cambiar el motor de persistencia no puede obligar a reescribir las reglas de acceso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

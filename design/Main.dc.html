@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #d9a066; text-decoration: none; }
+    a:hover { color: #f0bd85; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; min-height: 1500px; background: #0f0d0c; color: #ece7e1; font-family: 'IBM Plex Sans', system-ui, sans-serif; display: flex; flex-direction: column;">
+
+  <div style="display: flex; flex-direction: column; gap: 40px; padding: 120px 120px 110px 120px; border-bottom: 1px solid #2a2521;">
+    <p style="margin: 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8896a;">Desarrollador Full Stack · Argentina</p>
+
+    <h1 style="margin: 0; max-width: 980px; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 92px; line-height: 0.98; letter-spacing: -0.015em; text-wrap: pretty;">Diseño y construyo sistemas completos, <em style="font-style: italic; color: #d9a066;">no pantallas sueltas.</em></h1>
+
+    <p style="margin: 0; max-width: 620px; font-size: 19px; line-height: 1.65; color: #9c948b;">Hace dos años que construyo software. Hoy estoy levantando ID-Night: una plataforma de identidad y control de acceso para la noche, con backend en .NET, un servicio propio de biometría facial, apps móviles multiplataforma y una PWA que funciona sin señal.</p>
+
+    <div style="display: flex; gap: 20px; align-items: center; margin-top: 8px;">
+      <a href="#" style="display: inline-block; padding: 15px 28px; background: #d9a066; color: #0f0d0c; font-size: 15px; font-weight: 500; border-radius: 2px;">Ver el caso ID-Night</a>
+      <a href="#" style="display: inline-block; padding: 15px 28px; border: 1px solid #3a332c; color: #ece7e1; font-size: 15px; font-weight: 500; border-radius: 2px;">Contacto</a>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 56px; padding: 110px 120px 120px 120px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <p style="margin: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #a8896a;">Caso principal</p>
+      <div style="display: flex; align-items: baseline; gap: 28px; flex-wrap: wrap;">
+        <h2 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 58px; line-height: 1; letter-spacing: -0.01em;">ID-Night</h2>
+        <p style="margin: 0; font-size: 17px; color: #9c948b;">Identidad verificada y control de acceso para boliches y eventos.</p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px;">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665e;">El problema</p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #c4bbb1;">En la puerta de un boliche se decide en segundos si alguien entra. Hoy esa decisión se toma mirando un DNI a mano: se puede falsificar, no queda registro y ante un incidente no hay forma de reconstruir qué pasó.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665e;">El sistema</p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #c4bbb1;">Un backend en .NET que concentra el dominio, un microservicio de biometría facial independiente, un panel de administración en Next.js, una PWA con la credencial del usuario y una app de puerta en Kotlin Multiplatform.</p>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid #2a2521;">
+      <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 40px; padding: 44px 0; border-bottom: 1px solid #2a2521;">
+        <p style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; line-height: 1; color: #4a4139;">01</p>
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.2;">La biometría vive fuera del backend, y es stateless</h3>
+          <p style="margin: 0; max-width: 760px; font-size: 16px; line-height: 1.75; color: #c4bbb1;">Un microservicio propio en Python/FastAPI que corre YuNet + SFace sobre ONNX y solo calcula embeddings y comparaciones. No guarda nada.</p>
+          <div style="display: flex; gap: 12px; align-items: flex-start; padding-left: 20px; border-left: 2px solid #d9a066;">
+            <p style="margin: 0; max-width: 720px; font-size: 15px; line-height: 1.7; color: #9c948b;"><span style="color: #d9a066;">Lo que cuesta —</span> suma un salto de red y una superficie más para operar. A cambio, la biometría escala por separado y los tests corren sin levantar un solo modelo.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 40px; padding: 44px 0; border-bottom: 1px solid #2a2521;">
+        <p style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; line-height: 1; color: #4a4139;">02</p>
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <h3 style="margin: 0; font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.2;">Clean Architecture, con el dominio partido en módulos</h3>
+          <p style="margin: 0; max-width: 760px; font-size: 16px; line-height: 1.75; color: #c4bbb1;">Domain, Application, Infrastructure y Api separados, con las reglas de negocio sin ninguna dependencia sobre Entity Framework ni sobre ASP.NET.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 1520, "title": "A · Editorial nocturno" },
+    { "file": "Terminal.dc.html", "x": 1560, "y": 0, "w": 1440, "h": 1520, "title": "B · Terminal" },
+    { "file": "Estudio.dc.html", "x": 3120, "y": 0, "w": 1440, "h": 1520, "title": "C · Estudio" }
+  ],
+  "annotations": [
+    { "id": "nota-a", "x": 0, "y": -180, "w": 420, "text": "A · EDITORIAL NOCTURNO\nSerif de titular sobre negro cálido, acento cobre, mucho aire.\nSuma: se lee como un ensayo bien escrito, transmite oficio y criterio.\nCuesta: el serif puede leerse mas 'agencia' que 'ingeniero'." },
+    { "id": "nota-b", "x": 1560, "y": -180, "w": 420, "text": "B · TERMINAL\nMonospace, bordes duros, cero radios, acento lima.\nSuma: memorable, grita perfil tecnico, imposible de confundir.\nCuesta: es la mas polarizante. Un cliente freelance no tecnico puede sentirla fria." },
+    { "id": "nota-c", "x": 3120, "y": -180, "w": 420, "text": "C · ESTUDIO\nFondo papel claro, grilla de 12 columnas, acento oxido.\nSuma: se lee senior y consultor, la grilla ordena la densidad.\nCuesta: es la mas segura, la que menos se despega del resto." }
+  ],
+  "launch": { "view": "canvas" }
+}
