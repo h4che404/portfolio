@@ -14,7 +14,7 @@ export const profile = {
   email: "eliasjuancruz303@gmail.com",
   // International format, digits only (e.g. "5492611234567").
   // Leave empty to hide the WhatsApp call to action.
-  whatsapp: "" as string,
+  whatsapp: "5492634616717" as string,
   github: "https://github.com/h4che404",
   githubHandle: "h4che404",
 } as const;
