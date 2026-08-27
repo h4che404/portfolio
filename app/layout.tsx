@@ -6,7 +6,7 @@ import { profile } from "@/content/profile";
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -15,7 +15,14 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "700"],
 });
 
+// Absolute base for the generated Open Graph image, so link previews
+// (WhatsApp above all) resolve it. Override per environment if needed.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://portfolio-liard-two-ntjfmwxolk.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${profile.name} — ${profile.role}`,
   description: profile.headline,
   openGraph: {
@@ -23,6 +30,12 @@ export const metadata: Metadata = {
     description: profile.headline,
     type: "website",
     locale: "es_AR",
+    siteName: profile.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.name} — ${profile.role}`,
+    description: profile.headline,
   },
 };
 
