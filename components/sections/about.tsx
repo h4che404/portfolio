@@ -21,6 +21,14 @@ export function About() {
             los pidió.
           </p>
           <p>
+            En ID-Night la biometría no la resolví con una API de terceros:
+            armé el servicio, con OpenCV, detección con YuNet, comparación con
+            SFace y los modelos corriendo en ONNX. No entreno modelos ni me
+            presento como ingeniero de machine learning — integro visión por
+            computadora dentro de un sistema real, con sus problemas de
+            latencia, privacidad y trazabilidad.
+          </p>
+          <p>
             Escribo tests donde importan —reglas de negocio y la API real, no
             porcentajes de cobertura— y prefiero pagar el costo de una
             arquitectura explícita antes que descubrir a los seis meses que
