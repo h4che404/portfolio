@@ -70,7 +70,7 @@ export default function CvPage() {
         <section className="flex flex-col gap-4 print:break-inside-avoid">
           <Heading>Experiencia</Heading>
           {experience.map((job) => (
-            <div key={job.role} className="flex flex-col gap-1.5">
+            <div key={`${job.org}-${job.role}`} className="flex flex-col gap-1.5">
               <EntryHeader title={job.role} meta={job.period} />
               <p className="font-mono text-[11px] text-neutral-500">{job.org}</p>
               <ul className="flex flex-col gap-1 pl-4 text-sm leading-relaxed text-neutral-700">

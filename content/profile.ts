@@ -31,12 +31,11 @@ export const education = [
   },
 ] as const;
 
-// Fill in the exact years before sending the CV to a company.
 export const experience = [
   {
     role: "Desarrollador de software — proyectos propios",
     org: "ID-Night · Mi Partido",
-    period: "2024 — presente",
+    period: "2024 – presente",
     bullets: [
       "Diseño e implementación de un backend en .NET 10 con Clean Architecture, PostgreSQL y Entity Framework Core: autenticación, roles y permisos, auditoría, webhooks e integraciones externas.",
       "Desarrollo de un microservicio de biometría facial en Python/FastAPI con OpenCV, YuNet y SFace sobre ONNX, con comparación 1:1 por embeddings.",
@@ -46,18 +45,18 @@ export const experience = [
     ],
   },
   {
-    role: "Atención al cliente y ventas",
+    role: "Atención al cliente, ventas y gestión",
     org: "Negocio familiar",
-    period: "Más de 4 años",
+    period: "2021 – 2025",
     bullets: [
       "Asesoramiento y venta directa, detección de necesidades y manejo de objeciones.",
       "Resolución de consultas y situaciones conflictivas con foco en la retención del cliente.",
     ],
   },
   {
-    role: "Representante de atención al cliente",
+    role: "Atención al cliente y ventas",
     org: "Call center",
-    period: "Finalizado",
+    period: "2026",
     bullets: [
       "Atención telefónica bajo objetivos de calidad y volumen, con seguimiento y registro de casos.",
     ],
