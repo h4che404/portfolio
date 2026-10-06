@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PrintButton } from "@/components/cv/print-button";
 import {
   education,
@@ -34,7 +35,13 @@ function EntryHeader({ title, meta }: { title: string; meta: string }) {
 export default function CvPage() {
   return (
     <main className="min-h-screen bg-neutral-100 py-10 print:bg-white print:py-0">
-      <div className="mx-auto mb-6 flex w-full max-w-[794px] justify-end px-6 print:hidden">
+      <div className="mx-auto mb-6 flex w-full max-w-[794px] items-center justify-between px-6 print:hidden">
+        <Link
+          href="/"
+          className="font-mono text-xs text-neutral-600 transition-colors hover:text-neutral-900"
+        >
+          ← Volver al portfolio
+        </Link>
         <PrintButton />
       </div>
 

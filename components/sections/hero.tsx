@@ -1,41 +1,127 @@
 import { profile } from "@/content/profile";
-import { idNight } from "@/content/projects";
 
 export function Hero() {
+  const whatsappUrl = profile.whatsapp
+    ? `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(
+        profile.whatsappMessage
+      )}`
+    : null;
+
   return (
-    <header className="border-b border-border">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-11 px-6 py-24 sm:px-10 sm:py-28">
-        <p className="font-mono text-xs tracking-[0.12em] text-accent">
-          {"// "}
-          {profile.role.toUpperCase()}
-        </p>
+    <section className="relative overflow-hidden border-b border-border pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
+      {/* Subtle warm ambient gradient */}
+      <div
+        className="pointer-events-none absolute -top-40 right-1/2 h-96 w-96 translate-x-1/2 rounded-full bg-accent/5 blur-[120px] sm:h-[450px] sm:w-[450px]"
+        aria-hidden="true"
+      />
 
-        <h1 className="font-sans text-[clamp(2.75rem,10vw,6rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.035em]">
-          <span className="block whitespace-pre-line">{profile.headlineLead}</span>
-          <span className="block whitespace-pre-line text-accent">
-            {profile.headlineAccent}
-          </span>
-        </h1>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:px-6 lg:px-8">
+        {/* Availability Badge */}
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-xs text-muted shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>{profile.location}</span>
+            <span className="text-border-strong">·</span>
+            <span className="text-foreground font-medium">
+              {profile.availability}
+            </span>
+          </div>
+        </div>
 
-        <p className="max-w-2xl font-mono text-sm leading-[1.85] text-muted">
-          {profile.intro}
-        </p>
+        {/* Main Headline (Mobile-first sizing with clamp) */}
+        <div className="flex flex-col gap-4">
+          <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.08]">
+            Diseño y desarrollo{" "}
+            <span className="text-accent underline decoration-accent/40 decoration-wavy decoration-2 underline-offset-6">
+              productos digitales completos
+            </span>{" "}
+            para tu negocio.
+          </h1>
 
-        <div className="flex flex-col sm:flex-row">
-          <a
-            href={`#${idNight.slug}`}
-            className="bg-accent px-7 py-4 text-center font-mono text-xs font-bold uppercase tracking-[0.06em] text-background transition-colors hover:bg-foreground"
-          >
-            [ Ver {idNight.name} ]
-          </a>
+          <p className="max-w-2xl text-base text-muted sm:text-lg sm:leading-relaxed">
+            {profile.subheadline}
+          </p>
+        </div>
+
+        {/* Primary Call-to-actions (Mobile: stacked full width; Desktop: row) */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-2">
           <a
             href="#contacto"
-            className="border border-border-strong px-7 py-4 text-center font-mono text-xs uppercase tracking-[0.06em] transition-colors hover:border-accent hover:text-accent sm:border-l-0"
+            className="flex min-h-[48px] items-center justify-center rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-md transition-all hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98]"
           >
-            Contacto
+            Contame tu proyecto
+          </a>
+
+          {whatsappUrl && (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-6 py-3 text-center text-sm font-medium text-foreground transition-all hover:border-emerald-500/50 hover:bg-surface-raised active:scale-[0.98]"
+            >
+              <svg
+                className="h-4 w-4 text-emerald-400"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+              <span>Consultar por WhatsApp</span>
+            </a>
+          )}
+
+          <a
+            href="#proyectos"
+            className="flex min-h-[48px] items-center justify-center rounded-lg border border-border px-5 py-3 text-center text-sm font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
+          >
+            Ver proyectos realizados ↓
           </a>
         </div>
+
+        {/* Value pillars ribbon */}
+        <div className="grid grid-cols-2 gap-3 pt-6 border-t border-border/60 sm:grid-cols-4 sm:gap-4">
+          <div className="flex flex-col gap-0.5">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+              Arquitectura
+            </span>
+            <span className="text-xs sm:text-sm font-medium text-foreground">
+              Sistemas robustos de punta a punta
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-0.5">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+              Proceso
+            </span>
+            <span className="text-xs sm:text-sm font-medium text-foreground">
+              Avances funcionales cada semana
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-0.5">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+              Desarrollo
+            </span>
+            <span className="text-xs sm:text-sm font-medium text-foreground">
+              100% código propio y a medida
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-0.5">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+              Trato directo
+            </span>
+            <span className="text-xs sm:text-sm font-medium text-foreground">
+              Sin intermediarios ni demoras
+            </span>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
   );
 }

@@ -1,51 +1,114 @@
-import { Section } from "@/components/ui/section";
-import { TagList } from "@/components/ui/tag";
-import { skills } from "@/content/profile";
+import Link from "next/link";
+import { profile, skills } from "@/content/profile";
 
 export function About() {
   return (
-    <Section id="sobre-mi" eyebrow="Sobre mí" title="Cómo trabajo">
-      <div className="grid gap-14 md:grid-cols-2">
-        <div className="flex flex-col gap-5 font-mono text-[13px] leading-[1.85] text-muted">
-          <p>
-            Empecé a programar hace dos años y desde entonces trabajo casi
-            siempre sobre sistemas completos: dominio, backend, frontend y
-            móvil. No aprendí un framework y me quedé ahí; aprendí a decidir qué
-            hace falta en cada capa y por qué.
+    <section id="sobre-mi" className="border-b border-border py-16 sm:py-24">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="flex flex-col gap-3 max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
+            {"// "}SOBRE MÍ
           </p>
-          <p>
-            Me interesa el software que tiene consecuencias. ID-Night maneja
-            documentos de identidad y datos biométricos, así que el
-            consentimiento, la auditoría y la trazabilidad están en el modelo de
-            dominio desde el primer día, no agregados al final porque alguien
-            los pidió.
-          </p>
-          <p>
-            En ID-Night la biometría no la resolví con una API de terceros:
-            armé el servicio, con OpenCV, detección con YuNet, comparación con
-            SFace y los modelos corriendo en ONNX. No entreno modelos ni me
-            presento como ingeniero de machine learning — integro visión por
-            computadora dentro de un sistema real, con sus problemas de
-            latencia, privacidad y trazabilidad.
-          </p>
-          <p>
-            Escribo tests donde importan —reglas de negocio y la API real, no
-            porcentajes de cobertura— y prefiero pagar el costo de una
-            arquitectura explícita antes que descubrir a los seis meses que
-            cambiar la base de datos implica reescribir el producto.
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Detrás del desarrollo
+          </h2>
+          <p className="text-base text-muted sm:text-lg">
+            Combinación de criterio técnico, arquitectura limpia y comunicación
+            comercial transparente.
           </p>
         </div>
-        <div className="flex flex-col gap-8">
-          {skills.map((group) => (
-            <div key={group.area} className="flex flex-col gap-3">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-accent">
-                {group.area}
-              </p>
-              <TagList items={group.items} />
+
+        {/* Content Layout (Mobile: 1 column, lg: 2 columns) */}
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Left Column: Bio & Background (lg: 7 cols) */}
+          <div className="flex flex-col gap-6 lg:col-span-7">
+            <div className="flex flex-col gap-4 text-sm leading-relaxed text-muted sm:text-base">
+              {profile.bio.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
-          ))}
+
+            {/* Quick stats/highlights */}
+            <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-3">
+              <div className="rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
+                <span className="font-mono text-xl font-bold text-accent sm:text-2xl">
+                  {profile.yearsActive}+ años
+                </span>
+                <span className="text-xs text-muted">
+                  Construyendo software de punta a punta
+                </span>
+              </div>
+
+              <div className="rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
+                <span className="font-mono text-xl font-bold text-accent sm:text-2xl">
+                  UTN
+                </span>
+                <span className="text-xs text-muted">
+                  Tecnicatura en Programación en curso
+                </span>
+              </div>
+
+              <div className="col-span-2 sm:col-span-1 rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
+                <span className="font-mono text-xl font-bold text-accent sm:text-2xl">
+                  4+ años
+                </span>
+                <span className="text-xs text-muted">
+                  Experiencia previa en atención y ventas
+                </span>
+              </div>
+            </div>
+
+            {/* Links */}
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
+              <Link
+                href="/cv"
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-surface border border-border-strong px-5 py-3 text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-accent hover:text-accent"
+              >
+                <span>Ver currículum completo (CV)</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 text-xs font-mono text-muted transition-colors hover:border-border-strong hover:text-foreground"
+              >
+                <span>GitHub ({profile.githubHandle})</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Skills Stack (lg: 5 cols) */}
+          <div className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 sm:p-7 lg:col-span-5">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
+              Tecnologías principales
+            </h3>
+
+            <div className="flex flex-col gap-4 divide-y divide-border/60">
+              {skills.map((group) => (
+                <div key={group.area} className="pt-3 first:pt-0 flex flex-col gap-1.5">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-muted font-semibold">
+                    {group.area}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {group.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-md border border-border bg-surface-raised px-2 py-0.5 font-mono text-[11px] text-foreground/80"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

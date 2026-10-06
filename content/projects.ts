@@ -7,18 +7,31 @@ export type Decision = {
 
 export type Repo = { name: string; url: string; note: string };
 
+export type Pillar = { layer: string; value: string };
+
+export interface BaseProject {
+  slug: string;
+  name: string;
+  tagline: string;
+  status: string;
+  stack: readonly string[];
+  liveUrl?: string;
+  repos?: readonly Repo[];
+}
+
 export const idNight = {
   slug: "id-night",
   name: "ID-Night",
-  tagline: "Identidad verificada y control de acceso para boliches y eventos.",
-  // Four-column strip: one headline technology per layer of the platform.
+  tagline: "Identidad verificada y control de acceso biométrico para eventos y locales nocturnos.",
+  status: "En desarrollo activo · Buscando primeros clientes",
   pillars: [
     { layer: "Backend", value: ".NET 10" },
     { layer: "Biometría", value: "FastAPI · ONNX" },
     { layer: "Móvil", value: "Kotlin Multiplatform" },
     { layer: "Web", value: "Next.js · React 19" },
-  ],
-  status: "En desarrollo activo · buscando primeros clientes",
+  ] as const satisfies readonly Pillar[],
+  clientSummary:
+    "Solución integral que agiliza el ingreso a locales y eventos mediante validación biométrica facial rápida y credenciales digitales offline. Reemplaza el control manual de documentos, evita falsificaciones y garantiza trazabilidad y consentimiento legal en tiempo real.",
   problem:
     "En la puerta de un boliche se decide en segundos si alguien entra. Hoy esa decisión se toma mirando un DNI a mano: se puede falsificar, no queda registro y ante un incidente no hay forma de reconstruir qué pasó. Al mismo tiempo, cualquier sistema que resuelva esto maneja datos biométricos y documentos de identidad, así que el consentimiento y la trazabilidad no son una función más: son parte del núcleo.",
   approach:
@@ -34,7 +47,7 @@ export const idNight = {
     "alerts",
     "consent",
     "audit",
-  ],
+  ] as const,
   decisions: [
     {
       title: "La biometría vive fuera del backend, y es stateless",
@@ -101,7 +114,7 @@ export const idNight = {
     "Supabase",
     "Kotlin Multiplatform",
     "Compose Multiplatform",
-  ],
+  ] as const,
   repos: [
     {
       name: "Backend-ID-Night",
@@ -137,13 +150,27 @@ export const idNight = {
 } as const;
 
 export const miPartido = {
+  slug: "mi-partido",
   name: "Mi Partido",
-  tagline: "App para organizar partidos de fútbol amateur, armar equipos y encontrar rivales cerca.",
-  status: "Discontinuado por decisión propia",
+  tagline: "Plataforma de organización deportiva para jugadores y sistema de gestión de turnos para canchas.",
+  status: "Desarrollo completado y publicado · Sin operación comercial activa",
+  liveUrl: "https://mipartidoapp.com",
+  clientSummary:
+    "Ecosistema para fútbol, pádel y tenis en Mendoza: app móvil para jugadores (armado de equipos, búsqueda de rivales y confirmación) junto con portal y herramientas para complejos de canchas orientadas a optimizar ocupación en horarios valle y reducir cancelaciones.",
   body: [
-    "Mi Partido fue una app móvil multiplataforma construida con Kotlin Multiplatform, con geolocalización sobre Mapbox y una landing en Next.js para captar la beta. La idea era simple: resolver el caos de organizar un partido de fútbol amateur —juntar jugadores, armar equipos, encontrar rivales cercanos— desde un solo lugar.",
-    "La discontinué antes de lanzar. Al mirar el mercado con honestidad encontré dos cosas: la demanda real era mucho más chica de lo que había asumido, y el espacio ya estaba ocupado por aplicaciones consolidadas con años de ventaja y comunidad armada. Seguir significaba meses de trabajo para pelear una posición que ya estaba tomada, sin una diferencia clara que ofrecer.",
-    "Lo dejo acá a propósito. Decidir cuándo cortar es una habilidad técnica tanto como decidir qué construir, y prefiero mostrar el criterio completo antes que solo los proyectos que siguen vivos. Lo que aprendí de esta app —arquitectura multiplataforma con KMP, trabajo con mapas y geolocalización— se fue derecho a la app de seguridad de ID-Night.",
-  ],
-  stack: ["Kotlin Multiplatform", "Compose Multiplatform", "Mapbox", "Next.js"],
+    "Mi Partido es una plataforma integral para el deporte amateur: resuelve la coordinación entre jugadores de fútbol, pádel y tenis (búsqueda de rivales, conformación de equipos y confirmación de asistencia) y provee a los complejos de canchas un panel para publicar disponibilidad y captar reservas.",
+    "El desarrollo comprendió una aplicación móvil multiplataforma en Kotlin Multiplatform con Compose Multiplatform, un panel de gestión para propietarios de canchas y una plataforma web en Next.js con mapas interactivos sobre Leaflet.",
+    "El producto fue completado en su totalidad y publicado en mipartidoapp.com con foco piloto en la Zona Este de Mendoza (San Martín, Junín y Rivadavia). Actualmente no se encuentra en operación comercial activa, pero constituye un desarrollo completo con arquitectura validada de punta a punta.",
+  ] as const,
+  stack: [
+    "Kotlin Multiplatform",
+    "Compose Multiplatform",
+    "Next.js",
+    "Leaflet",
+    "Tailwind CSS",
+    "TypeScript",
+  ] as const,
+  repos: [] as const,
 } as const;
+
+export const projects = [idNight, miPartido] as const;

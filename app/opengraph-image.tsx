@@ -22,15 +22,22 @@ export default async function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#050505",
-          color: "#e8e8e3",
+          background: "#0d0f12",
+          color: "#f3f4f6",
           fontFamily: "JetBrains Mono",
           padding: "72px 72px",
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#6a6a63" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: 22,
+            color: "#9ca3af",
+          }}
+        >
           <span>{profile.name.toUpperCase()}</span>
-          <span>AR · {profile.availability.toUpperCase()}</span>
+          <span>MENDOZA, AR · {profile.availability.toUpperCase()}</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -39,19 +46,38 @@ export default async function OpenGraphImage() {
               display: "flex",
               flexDirection: "column",
               fontFamily: "Archivo",
-              fontSize: 86,
-              lineHeight: 1.02,
-              letterSpacing: "-0.035em",
+              fontSize: 76,
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
             }}
           >
-            <span>SISTEMAS COMPLETOS.</span>
-            <span style={{ color: "#c9f24e" }}>NO PANTALLAS SUELTAS.</span>
+            <span>DESARROLLO DE SOFTWARE</span>
+            <span style={{ color: "#f59e0b" }}>PRODUCTOS COMPLETOS</span>
           </div>
+          <p
+            style={{
+              fontSize: 26,
+              color: "#9ca3af",
+              marginTop: 20,
+              fontFamily: "JetBrains Mono",
+            }}
+          >
+            Webs de alto impacto · Sistemas a medida · Apps móviles · IA
+          </p>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", fontSize: 24 }}>
-          <span style={{ color: "#8e8e86" }}>{profile.role}</span>
-          <span style={{ color: "#c9f24e" }}>.NET · Next.js · Kotlin Multiplatform</span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            fontSize: 22,
+            borderTop: "1px solid #222731",
+            paddingTop: 24,
+          }}
+        >
+          <span style={{ color: "#9ca3af" }}>eliasjuancruz303@gmail.com</span>
+          <span style={{ color: "#f59e0b" }}>.NET · Next.js · KMP · ONNX</span>
         </div>
       </div>
     ),

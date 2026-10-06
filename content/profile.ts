@@ -1,20 +1,30 @@
 export const profile = {
   name: "Juan Cruz Elias Martin",
+  shortName: "Juan Cruz",
   role: "Desarrollador Full Stack · IA aplicada",
   location: "Mendoza, Argentina",
-  // Positioning line: what he builds, not which frameworks he knows.
-  headline: "Diseño y construyo sistemas completos, no pantallas sueltas.",
-  // Display headline, split so the second half carries the accent color.
-  headlineLead: "Sistemas\ncompletos.",
-  headlineAccent: "No pantallas\nsueltas.",
-  availability: "Disponible",
+  // Client-facing positioning: what he builds for a business, not which
+  // frameworks he knows.
+  headline: "Diseño y desarrollo productos digitales completos para tu negocio.",
+  subheadline:
+    "Webs, sistemas a medida, apps móviles e integraciones con inteligencia artificial. Desde la idea hasta el producto funcionando, con comunicación clara en cada etapa.",
+  availability: "Disponible para nuevos proyectos",
   yearsActive: 2,
   intro:
-    "Hace dos años que construyo software. Hoy estoy levantando ID-Night: una plataforma de identidad y control de acceso para la noche, con backend en .NET, un servicio propio de biometría facial, apps móviles multiplataforma y una PWA que funciona sin señal.",
+    "Hace dos años que construyo software de punta a punta. Hoy estoy desarrollando ID-Night, una plataforma de identidad y control de acceso para locales nocturnos, con backend en .NET, un servicio propio de verificación facial, apps móviles y una credencial digital que funciona sin señal.",
+  // Short bio for the "Sobre mí" section, written for non-technical readers.
+  bio: [
+    "Soy desarrollador full stack y vivo en Mendoza, Argentina. Hace dos años que construyo software completo: la base de datos, el servidor, la web y las apps móviles, además de integraciones con inteligencia artificial.",
+    "Antes de dedicarme al desarrollo trabajé varios años en atención al cliente y ventas. Esa experiencia me ayuda a entender qué necesita un negocio y a explicar cada decisión técnica en términos simples.",
+    "Estudio la Tecnicatura Universitaria en Programación en la UTN, actualmente en curso.",
+  ],
   email: "eliasjuancruz303@gmail.com",
   // International format, digits only (e.g. "5492611234567").
   // Leave empty to hide the WhatsApp call to action.
   whatsapp: "5492634616717" as string,
+  // Prefilled text for wa.me links.
+  whatsappMessage:
+    "Hola Juan Cruz, vi tu portfolio y quiero hacerte una consulta sobre un proyecto.",
   github: "https://github.com/h4che404",
   githubHandle: "h4che404",
 } as const;
@@ -39,7 +49,7 @@ export const experience = [
     bullets: [
       "Diseño e implementación de un backend en .NET 10 con Clean Architecture, PostgreSQL y Entity Framework Core: autenticación, roles y permisos, auditoría, webhooks e integraciones externas.",
       "Desarrollo de un microservicio de biometría facial en Python/FastAPI con OpenCV, YuNet y SFace sobre ONNX, con comparación 1:1 por embeddings.",
-      "Frontends en Next.js y React 19, PWA offline-first con Workbox y aplicación móvil en Kotlin Multiplatform con target Android e iOS.",
+      "Frontends en Next.js y React 19, PWA offline-first con Workbox y aplicaciones móviles en Kotlin Multiplatform con target Android e iOS.",
       "Despliegue y operación sobre Azure (App Service, Container Apps, Container Registry), Docker, Vercel y GitHub Actions.",
       "Testing unitario, de integración y de APIs con Postman y Swagger/OpenAPI; debugging, logs y validación de datos.",
     ],
