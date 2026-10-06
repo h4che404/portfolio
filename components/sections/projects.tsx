@@ -30,9 +30,21 @@ export function Projects() {
                 {idNight.status}
               </span>
 
-              <span className="font-mono text-xs text-muted">
-                Caso principal · Sistema distribuido
-              </span>
+              <div className="flex items-center gap-3">
+                <a
+                  href={idNight.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs text-accent transition-colors hover:underline underline-offset-4"
+                >
+                  <span>idnight.app</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <span className="hidden sm:inline text-border-strong font-mono text-xs">·</span>
+                <span className="hidden sm:inline font-mono text-xs text-muted">
+                  Sistema distribuido
+                </span>
+              </div>
             </div>
 
             {/* Title & Tagline */}
@@ -66,11 +78,21 @@ export function Projects() {
 
             {/* Action Buttons */}
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
-              <Link
-                href={`/proyectos/${idNight.slug}`}
+              <a
+                href={idNight.liveUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
               >
-                <span>Ver arquitectura y decisiones técnicas</span>
+                <span>Visitar idnight.app</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <Link
+                href={`/proyectos/${idNight.slug}`}
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface-raised px-5 py-3 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+              >
+                <span>Ver arquitectura técnica</span>
                 <span aria-hidden="true">→</span>
               </Link>
 
@@ -78,9 +100,9 @@ export function Projects() {
                 href={idNight.repos[0]?.url}
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 text-center text-xs font-mono font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-border px-4 py-3 text-center text-xs font-mono font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
               >
-                <span>Repositorios en GitHub ({idNight.repos.length})</span>
+                <span>Repos ({idNight.repos.length})</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>

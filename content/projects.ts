@@ -24,6 +24,7 @@ export const idNight = {
   name: "ID-Night",
   tagline: "Identidad verificada y control de acceso biométrico para eventos y locales nocturnos.",
   status: "En desarrollo activo · Buscando primeros clientes",
+  liveUrl: "https://idnight.app",
   pillars: [
     { layer: "Backend", value: ".NET 10" },
     { layer: "Biometría", value: "FastAPI · ONNX" },

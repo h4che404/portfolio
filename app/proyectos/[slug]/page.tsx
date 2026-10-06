@@ -50,13 +50,19 @@ export default async function ProjectPage({ params }: PageProps) {
 
           {/* Header */}
           <header className="flex flex-col gap-4 border-b border-border pb-8">
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 font-mono text-[11px] text-emerald-400">
                 {idNight.status}
               </span>
-              <span className="font-mono text-xs text-muted">
-                Arquitectura Clean Architecture & Microservicios
-              </span>
+              <a
+                href={idNight.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+              >
+                <span>idnight.app</span>
+                <span>↗</span>
+              </a>
             </div>
 
             <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
