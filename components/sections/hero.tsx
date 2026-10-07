@@ -30,7 +30,7 @@ export function Hero() {
             {/* Availability & Role Badges */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
               <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-accent shadow-sm">
-                Software Engineer · Full Stack
+                Software Developer · Full Stack
               </span>
               <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-surface px-3 py-1 text-[11px] sm:text-xs text-muted shadow-sm">
                 <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />

@@ -51,7 +51,7 @@ export default async function OpenGraphImage() {
               letterSpacing: "-0.03em",
             }}
           >
-            <span>SOFTWARE ENGINEER</span>
+            <span>SOFTWARE DEVELOPER</span>
             <span style={{ color: "#f59e0b" }}>SISTEMAS DE PUNTA A PUNTA</span>
           </div>
           <p

@@ -1,20 +1,20 @@
 export const profile = {
   name: "Juan Cruz Elias Martin",
   shortName: "Juan Cruz",
-  role: "Software Engineer · Full Stack · IA aplicada",
+  role: "Software Developer · Full Stack · IA aplicada",
   location: "Mendoza, Argentina",
   headline: "Construyo software y productos digitales de punta a punta.",
   subheadline:
-    "Software Engineer especializado en sistemas web, backend robusto, aplicaciones móviles e integraciones con IA aplicada. Enfoque en arquitectura limpia, código tipado y soluciones que resuelven problemas reales.",
+    "Software Developer especializado en sistemas web, backend robusto, aplicaciones móviles e integraciones con IA aplicada. Enfoque en arquitectura limpia, código tipado y productos reales en producción.",
   availability: "Disponible para nuevos proyectos",
   yearsActive: 2,
   intro:
     "Construyo software de punta a punta: desde el modelado de dominio y persistencia hasta APIs de alto rendimiento, interfaces reactivas y despliegue contenerizado.",
   // Short bio for the "Sobre mí" section
   bio: [
-    "Soy Software Engineer enfocado en diseñar y construir sistemas digitales completos desde Mendoza, Argentina. No me limito a interfaces: defino el modelo de datos, la arquitectura del servidor, la aplicación cliente (web o móvil) y el despliegue en la nube.",
-    "Mi trayectoria en estos dos años se define por la evolución técnica a través de productos reales: desde el desarrollo móvil nativo en Mi Partido, pasando por la arquitectura distribuida con biometría e IA en ID-Night, hasta la plataforma SaaS multitenant con monorepo y PWA offline en Luppi.",
-    "Cuento además con experiencia previa en atención y ventas, lo que me da una perspectiva clara para entender necesidades operativas reales y comunicarme de forma directa. Actualmente estudio la Tecnicatura Universitaria en Programación en la UTN.",
+    "Diseño y construyo productos de software completos de punta a punta. Mi diferencial no es solamente programar frontend o backend: me enfoco en entender el problema de negocio, estructurar la arquitectura y llevar sistemas reales a producción.",
+    "En estos dos años mi trabajo evolucionó a través de tres productos propios en funcionamiento: Mi Partido (aplicaciones móviles con Kotlin Multiplatform y validación con usuarios), ID-Night (arquitectura distribuida en .NET 10 con microservicio biométrico en Python/ONNX) y Luppi (plataforma SaaS multitenant con monorepo en Turborepo, Fastify y PWA offline).",
+    "Cuento además con experiencia previa en atención al cliente y ventas, lo que me da una perspectiva clara para traducir requerimientos en soluciones técnicas y comunicarme sin tecnicismos innecesarios. Estudio la Tecnicatura Universitaria en Programación en la UTN.",
   ],
   email: "eliasjuancruz303@gmail.com",
   // International format, digits only (e.g. "5492611234567").
@@ -68,7 +68,7 @@ export const education = [
 
 export const experience = [
   {
-    role: "Junior Software Engineer — proyectos propios",
+    role: "Software Developer — proyectos propios",
     org: "ID-Night · Luppi · Mi Partido",
     period: "2024 – presente",
     bullets: [
