@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "Desarrollo productos digitales completos para empresas y negocios: aplicaciones web, sistemas de gestión interna, apps móviles e inteligencia artificial aplicada.",
   keywords: [
     "Juan Cruz Elias Martin",
+    "Junior Software Engineer",
     "Desarrollador Full Stack",
     "Desarrollo Web Mendoza",
     "Sistemas a Medida",

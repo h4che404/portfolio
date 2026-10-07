@@ -1,7 +1,7 @@
 export const profile = {
   name: "Juan Cruz Elias Martin",
   shortName: "Juan Cruz",
-  role: "Desarrollador Full Stack · IA aplicada",
+  role: "Junior Software Engineer · Full Stack",
   location: "Mendoza, Argentina",
   // Client-facing positioning: what he builds for a business, not which
   // frameworks he knows.
@@ -14,7 +14,7 @@ export const profile = {
     "Hace dos años que construyo software de punta a punta. Actualmente desarrollo ID-Night (control de acceso biométrico con .NET, microservicio de visión por IA y apps móviles) y Luppi (centro comercial digital y fidelización barrial con Turborepo, Fastify y PWA).",
   // Short bio for the "Sobre mí" section, written for non-technical readers.
   bio: [
-    "Soy desarrollador full stack y vivo en Mendoza, Argentina. Hace dos años que construyo software completo: la base de datos, el servidor, la web y las apps móviles, además de integraciones con inteligencia artificial.",
+    "Soy Junior Software Engineer y desarrollador full stack en Mendoza, Argentina. Hace dos años que construyo software completo: la base de datos, el servidor, la web y las apps móviles, además de integraciones con inteligencia artificial.",
     "Antes de dedicarme al desarrollo trabajé varios años en atención al cliente y ventas. Esa experiencia me ayuda a entender qué necesita un negocio y a explicar cada decisión técnica en términos simples.",
     "Estudio la Tecnicatura Universitaria en Programación en la UTN, actualmente en curso.",
   ],
@@ -43,7 +43,7 @@ export const education = [
 
 export const experience = [
   {
-    role: "Desarrollador de software — proyectos propios",
+    role: "Junior Software Engineer — proyectos propios",
     org: "ID-Night · Luppi · Mi Partido",
     period: "2024 – presente",
     bullets: [
