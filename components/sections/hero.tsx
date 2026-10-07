@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { profile } from "@/content/profile";
+import { TechIcon } from "@/components/ui/tech-icons";
 
 export function Hero() {
   const whatsappUrl = profile.whatsapp
@@ -27,7 +28,7 @@ export function Hero() {
           <div className="flex flex-col gap-6 lg:col-span-7">
             {/* Availability Badge */}
             <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-[11px] sm:text-xs text-muted shadow-sm">
+              <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-surface px-3 py-1 text-[11px] sm:text-xs text-muted shadow-sm">
                 <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="shrink-0">{profile.location}</span>
                 <span className="text-border-strong shrink-0">·</span>
@@ -91,6 +92,36 @@ export function Hero() {
                 Ver proyectos realizados ↓
               </a>
             </div>
+
+            {/* Tech Stack quick strip */}
+            <div className="flex flex-col gap-2.5 pt-3">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">
+                Tecnologías y herramientas
+              </span>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+                {[
+                  { name: "Next.js", icon: "nextjs", hover: "hover:text-foreground" },
+                  { name: "React", icon: "react", hover: "hover:text-cyan-400" },
+                  { name: "TypeScript", icon: "typescript", hover: "hover:text-blue-400" },
+                  { name: "Tailwind", icon: "tailwind", hover: "hover:text-teal-400" },
+                  { name: ".NET", icon: "dotnet", hover: "hover:text-purple-400" },
+                  { name: "Node.js", icon: "nodejs", hover: "hover:text-emerald-400" },
+                  { name: "Python", icon: "python", hover: "hover:text-amber-400" },
+                  { name: "PostgreSQL", icon: "postgres", hover: "hover:text-sky-400" },
+                  { name: "Docker", icon: "docker", hover: "hover:text-blue-400" },
+                  { name: "Kotlin", icon: "kotlin", hover: "hover:text-violet-400" },
+                ].map((t) => (
+                  <div
+                    key={t.name}
+                    title={t.name}
+                    className={`flex items-center gap-1.5 rounded-lg border border-border/70 bg-surface/70 px-2.5 py-1 text-xs text-muted transition-all duration-200 ${t.hover} hover:border-border-strong hover:bg-surface-raised`}
+                  >
+                    <TechIcon name={t.icon} size={14} />
+                    <span className="text-[11px] font-medium">{t.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Visual Portrait Showcase */}
@@ -135,20 +166,6 @@ export function Hero() {
                     className="relative z-10 h-full w-full object-cover object-top scale-105"
                   />
                 </div>
-
-                {/* Floating cyber accents */}
-                <span
-                  className="pointer-events-none absolute -left-3 top-10 select-none font-mono text-2xl font-bold text-purple-400/35 sm:-left-5 sm:text-3xl"
-                  aria-hidden="true"
-                >
-                  &lt;
-                </span>
-                <span
-                  className="pointer-events-none absolute -right-3 bottom-10 select-none font-mono text-2xl font-bold text-accent/35 sm:-right-5 sm:text-3xl"
-                  aria-hidden="true"
-                >
-                  /&gt;
-                </span>
               </div>
             </div>
           </div>
@@ -157,7 +174,7 @@ export function Hero() {
         {/* Value pillars ribbon */}
         <div className="grid grid-cols-2 gap-3 pt-6 border-t border-border/60 sm:grid-cols-4 sm:gap-4">
           <div className="flex flex-col gap-0.5">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+            <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
               Arquitectura
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">
@@ -166,7 +183,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col gap-0.5">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+            <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
               Proceso
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">
@@ -175,7 +192,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col gap-0.5">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+            <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
               Desarrollo
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">
@@ -184,7 +201,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col gap-0.5">
-            <span className="font-mono text-[11px] uppercase tracking-wider text-accent font-semibold">
+            <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
               Trato directo
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">

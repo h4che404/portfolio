@@ -1,5 +1,21 @@
 import Link from "next/link";
-import { profile, skills } from "@/content/profile";
+import { profile } from "@/content/profile";
+import { TechIcon } from "@/components/ui/tech-icons";
+
+const TECH_STACK = [
+  { name: "Next.js", icon: "nextjs", desc: "Web full stack & SSR" },
+  { name: "React", icon: "react", desc: "Interfaces interactivas" },
+  { name: "TypeScript", icon: "typescript", desc: "Código robusto y tipado" },
+  { name: "Tailwind CSS", icon: "tailwind", desc: "Diseño responsive y moderno" },
+  { name: ".NET / C#", icon: "dotnet", desc: "Arquitectura backend sólida" },
+  { name: "Node.js", icon: "nodejs", desc: "APIs y microservicios" },
+  { name: "Python", icon: "python", desc: "Inteligencia artificial aplicada" },
+  { name: "PostgreSQL", icon: "postgres", desc: "Bases de datos confiables" },
+  { name: "Docker", icon: "docker", desc: "Contenedores y despliegues" },
+  { name: "Kotlin", icon: "kotlin", desc: "Aplicaciones móviles" },
+  { name: "Redis", icon: "redis", desc: "Rendimiento y caché rápida" },
+  { name: "Git", icon: "git", desc: "Integración y control seguro" },
+] as const;
 
 export function About() {
   return (
@@ -7,8 +23,8 @@ export function About() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div data-reveal className="flex flex-col gap-3 max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
-            {"// "}SOBRE MÍ
+          <p className="text-xs uppercase tracking-widest text-accent font-semibold">
+            SOBRE MÍ
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Detrás del desarrollo
@@ -20,9 +36,9 @@ export function About() {
         </div>
 
         {/* Content Layout (Mobile: 1 column, lg: 2 columns) */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* Left Column: Bio & Background (lg: 7 cols) */}
-          <div className="flex flex-col gap-6 lg:col-span-7">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lg:items-start">
+          {/* Left Column: Bio & Background (lg: 6 cols) */}
+          <div className="flex flex-col gap-6 lg:col-span-6">
             <div data-reveal className="flex flex-col gap-4 text-sm leading-relaxed text-muted sm:text-base">
               {profile.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -32,7 +48,7 @@ export function About() {
             {/* Quick stats/highlights */}
             <div data-reveal data-reveal-delay="2" className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-3">
               <div className="rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
-                <span className="font-mono text-xl font-bold text-accent sm:text-2xl">
+                <span className="text-2xl font-bold text-accent sm:text-3xl">
                   {profile.yearsActive}+ años
                 </span>
                 <span className="text-xs text-muted">
@@ -41,7 +57,7 @@ export function About() {
               </div>
 
               <div className="rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
-                <span className="font-mono text-xl font-bold text-accent sm:text-2xl">
+                <span className="text-2xl font-bold text-accent sm:text-3xl">
                   UTN
                 </span>
                 <span className="text-xs text-muted">
@@ -50,7 +66,7 @@ export function About() {
               </div>
 
               <div className="col-span-2 sm:col-span-1 rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
-                <span className="font-mono text-xl font-bold text-accent sm:text-2xl">
+                <span className="text-2xl font-bold text-accent sm:text-3xl">
                   4+ años
                 </span>
                 <span className="text-xs text-muted">
@@ -81,31 +97,41 @@ export function About() {
             </div>
           </div>
 
-          {/* Right Column: Skills Stack (lg: 5 cols) */}
-          <div data-reveal data-reveal-delay="3" className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 sm:p-7 lg:col-span-5">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
-              Tecnologías principales
-            </h3>
+          {/* Right Column: Visual Tech Stack with Logos (lg: 6 cols) */}
+          <div data-reveal data-reveal-delay="3" className="flex flex-col gap-5 rounded-2xl border border-border bg-surface p-6 sm:p-7 lg:col-span-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xs uppercase tracking-widest text-accent font-semibold">
+                Tecnologías y herramientas
+              </h3>
+              <span className="text-[11px] text-muted">
+                Stack principal
+              </span>
+            </div>
 
-            <div className="flex flex-col gap-4 divide-y divide-border/60">
-              {skills.map((group) => (
-                <div key={group.area} className="pt-3 first:pt-0 flex flex-col gap-1.5">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-muted font-semibold">
-                    {group.area}
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {group.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-md border border-border bg-surface-raised px-2 py-0.5 font-mono text-[11px] text-foreground/80"
-                      >
-                        {item}
-                      </span>
-                    ))}
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              {TECH_STACK.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="group flex items-center gap-3 rounded-xl border border-border/80 bg-surface-raised/50 p-2.5 transition-all duration-200 hover:border-accent/40 hover:bg-surface-raised"
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-colors group-hover:text-accent">
+                    <TechIcon name={tech.icon} size={18} />
+                  </div>
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-xs font-semibold text-foreground truncate group-hover:text-accent transition-colors">
+                      {tech.name}
+                    </span>
+                    <span className="text-[10px] text-muted truncate">
+                      {tech.desc}
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
+
+            <p className="pt-2 border-t border-border/60 text-xs text-muted leading-relaxed">
+              Herramientas modernas enfocadas en seguridad, velocidad y estabilidad para tu producto digital.
+            </p>
           </div>
         </div>
       </div>

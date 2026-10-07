@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { idNight, luppi, miPartido } from "@/content/projects";
+import { TechIcon } from "@/components/ui/tech-icons";
 
 export function Projects() {
   return (
@@ -14,8 +15,8 @@ export function Projects() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div data-reveal className="flex flex-col gap-3 max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
-            {"// "}PROYECTOS DESTACADOS
+          <p className="text-xs uppercase tracking-widest text-accent font-semibold">
+            PROYECTOS DESTACADOS
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Sistemas reales construidos de punta a punta
@@ -123,18 +124,24 @@ export function Projects() {
                 ))}
               </ul>
 
-              {/* Pillars Badges */}
-              <div className="grid grid-cols-2 gap-2 rounded-xl border border-border bg-surface-raised p-3">
-                {idNight.pillars.map((pillar) => (
-                  <div key={pillar.layer} className="flex flex-col">
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-muted font-semibold">
-                      {pillar.layer}
-                    </span>
-                    <span className="text-xs font-semibold text-foreground truncate">
-                      {pillar.value}
-                    </span>
-                  </div>
-                ))}
+              {/* Tech Stack Pills with Logos */}
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="dotnet" size={14} className="text-purple-400" />
+                  <span>.NET 10</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="python" size={14} className="text-amber-400" />
+                  <span>Python (IA)</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="nextjs" size={14} className="text-foreground" />
+                  <span>Next.js</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="postgres" size={14} className="text-sky-400" />
+                  <span>PostgreSQL</span>
+                </span>
               </div>
 
               {/* Action Buttons */}
@@ -269,18 +276,24 @@ export function Projects() {
                 ))}
               </ul>
 
-              {/* Pillars Badges */}
-              <div className="grid grid-cols-2 gap-2 rounded-xl border border-border bg-surface-raised p-3">
-                {luppi.pillars.map((pillar) => (
-                  <div key={pillar.layer} className="flex flex-col">
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-muted font-semibold">
-                      {pillar.layer}
-                    </span>
-                    <span className="text-xs font-semibold text-foreground truncate">
-                      {pillar.value}
-                    </span>
-                  </div>
-                ))}
+              {/* Tech Stack Pills with Logos */}
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="nodejs" size={14} className="text-emerald-400" />
+                  <span>Fastify / Node</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="postgres" size={14} className="text-sky-400" />
+                  <span>PostgreSQL</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="tailwind" size={14} className="text-teal-400" />
+                  <span>PWA / Tailwind</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="redis" size={14} className="text-red-400" />
+                  <span>Redis</span>
+                </span>
               </div>
 
               {/* Action Buttons */}
@@ -414,16 +427,20 @@ export function Projects() {
                 ))}
               </ul>
 
-              {/* Stack Tags */}
-              <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                {miPartido.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-md border border-border bg-surface-raised px-2.5 py-1 font-mono text-[11px] text-muted"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              {/* Tech Stack Pills with Logos */}
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="kotlin" size={14} className="text-violet-400" />
+                  <span>Kotlin Multiplatform</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="nextjs" size={14} className="text-foreground" />
+                  <span>Next.js</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-raised px-2.5 py-1 text-xs font-medium text-foreground">
+                  <TechIcon name="postgres" size={14} className="text-sky-400" />
+                  <span>PostgreSQL</span>
+                </span>
               </div>
 
               {/* Action Buttons */}

@@ -12,8 +12,8 @@ export function Services() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div data-reveal className="flex flex-col gap-3 max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
-            {"// "}SERVICIOS
+          <p className="text-xs uppercase tracking-widest text-accent font-semibold">
+            SERVICIOS
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
             Soluciones de software pensadas para resolver problemas reales
