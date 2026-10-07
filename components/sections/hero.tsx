@@ -105,6 +105,7 @@ export function Hero() {
                   { name: "TypeScript", icon: "typescript", hover: "hover:text-blue-400" },
                   { name: "Tailwind", icon: "tailwind", hover: "hover:text-teal-400" },
                   { name: ".NET", icon: "dotnet", hover: "hover:text-purple-400" },
+                  { name: "Java", icon: "java", hover: "hover:text-amber-500" },
                   { name: "Node.js", icon: "nodejs", hover: "hover:text-emerald-400" },
                   { name: "Python", icon: "python", hover: "hover:text-amber-400" },
                   { name: "PostgreSQL", icon: "postgres", hover: "hover:text-sky-400" },

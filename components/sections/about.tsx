@@ -8,12 +8,14 @@ const TECH_STACK = [
   { name: "TypeScript", icon: "typescript", desc: "Código robusto y tipado" },
   { name: "Tailwind CSS", icon: "tailwind", desc: "Diseño responsive y moderno" },
   { name: ".NET / C#", icon: "dotnet", desc: "Arquitectura backend sólida" },
-  { name: "Node.js", icon: "nodejs", desc: "APIs y microservicios" },
+  { name: "Java / Spring Boot", icon: "java", desc: "Sistemas backend y APIs" },
+  { name: "Node.js", icon: "nodejs", desc: "Microservicios y endpoints" },
   { name: "Python", icon: "python", desc: "Inteligencia artificial aplicada" },
   { name: "PostgreSQL", icon: "postgres", desc: "Bases de datos confiables" },
   { name: "Docker", icon: "docker", desc: "Contenedores y despliegues" },
   { name: "Kotlin", icon: "kotlin", desc: "Aplicaciones móviles" },
   { name: "Redis", icon: "redis", desc: "Rendimiento y caché rápida" },
+  { name: "Azure / Cloud", icon: "azure", desc: "Infraestructura en la nube" },
   { name: "Git", icon: "git", desc: "Integración y control seguro" },
 ] as const;
 
