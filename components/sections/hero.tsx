@@ -95,51 +95,54 @@ export function Hero() {
 
           {/* Right Column: Visual Portrait Showcase */}
           <div className="flex justify-center lg:col-span-5 lg:justify-end">
-            <div className="relative mx-auto flex w-full max-w-[320px] items-center justify-center sm:max-w-[380px] lg:max-w-[420px]">
-              {/* Diffuse aura glow (purple, sky blue & orange accent) */}
+            <div className="relative mx-auto flex w-full max-w-[340px] items-center justify-center sm:max-w-[400px] lg:max-w-[440px]">
+              {/* Diffuse ambient glow (purple, electric blue, and warm orange) */}
               <div
-                className="pointer-events-none absolute -inset-6 rounded-full bg-gradient-to-tr from-purple-600/30 via-sky-500/20 to-accent/25 blur-3xl"
+                className="pointer-events-none absolute -inset-4 rounded-full bg-gradient-to-tr from-purple-600/35 via-sky-500/20 to-accent/25 blur-3xl opacity-80"
                 aria-hidden="true"
               />
 
-              {/* Decorative circular halo container */}
-              <div className="relative flex items-center justify-center">
+              {/* Decorative halo backdrop directly behind cutout */}
+              <div className="relative flex w-full items-center justify-center">
                 {/* Outer orbital halo ring */}
                 <div
-                  className="relative flex h-72 w-72 items-center justify-center rounded-full border border-purple-500/30 bg-gradient-to-b from-purple-500/10 via-transparent to-transparent p-3.5 shadow-[0_0_60px_-15px_rgba(147,51,234,0.35)] sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+                  className="absolute h-72 w-72 rounded-full border border-purple-500/35 bg-gradient-to-br from-purple-900/30 via-surface/60 to-surface/20 p-3 shadow-[0_0_70px_-12px_rgba(147,51,234,0.4)] sm:h-80 sm:w-80 lg:h-96 lg:w-96"
                   aria-hidden="true"
                 >
-                  {/* Secondary inner ring */}
-                  <div className="h-full w-full rounded-full border border-accent/20" />
+                  {/* Secondary inner ring with accent orange touch */}
+                  <div className="h-full w-full rounded-full border border-accent/30 bg-gradient-to-b from-purple-500/10 via-transparent to-transparent" />
                 </div>
 
-                {/* Photo container */}
-                <div className="absolute h-64 w-64 overflow-hidden rounded-full border-2 border-purple-500/40 bg-black shadow-2xl sm:h-72 sm:w-72 lg:h-84 lg:w-84">
-                  <Image
-                    src="/profile.jpg"
-                    alt={profile.name}
-                    width={400}
-                    height={400}
-                    priority
-                    className="h-full w-full object-cover object-top"
-                  />
-                  {/* Subtle bottom fade to blend base seamlessly */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                </div>
-
-                {/* Floating decorative cyber accents */}
+                {/* Floating cyber accents */}
                 <span
-                  className="pointer-events-none absolute -left-3 top-10 select-none font-mono text-2xl font-bold text-purple-400/30 sm:-left-5 sm:text-3xl"
+                  className="pointer-events-none absolute -left-2 top-14 select-none font-mono text-2xl font-bold text-purple-400/40 sm:-left-4 sm:text-3xl"
                   aria-hidden="true"
                 >
                   &lt;
                 </span>
                 <span
-                  className="pointer-events-none absolute -right-3 bottom-10 select-none font-mono text-2xl font-bold text-accent/30 sm:-right-5 sm:text-3xl"
+                  className="pointer-events-none absolute -right-2 bottom-14 select-none font-mono text-2xl font-bold text-accent/40 sm:-right-4 sm:text-3xl"
                   aria-hidden="true"
                 >
                   /&gt;
                 </span>
+
+                {/* Cutout Photo Layer */}
+                <div className="relative z-10 w-64 pt-4 sm:w-72 lg:w-80">
+                  <Image
+                    src="/profile.png"
+                    alt={profile.name}
+                    width={400}
+                    height={400}
+                    priority
+                    className="h-auto w-full object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)]"
+                  />
+                  {/* Subtle fade at the very bottom edge */}
+                  <div
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background via-background/60 to-transparent"
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
             </div>
           </div>
