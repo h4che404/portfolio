@@ -2,10 +2,16 @@ import { workProcess } from "@/content/services";
 
 export function Process() {
   return (
-    <section id="proceso" className="border-b border-border py-16 sm:py-24">
+    <section id="proceso" className="relative overflow-hidden py-16 sm:py-24">
+      {/* Ambient violet glow in background */}
+      <div
+        className="pointer-events-none absolute -bottom-24 right-1/4 h-96 w-96 rounded-full bg-violet-600/5 blur-[140px]"
+        aria-hidden="true"
+      />
+
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-3 max-w-3xl">
+        <div data-reveal className="flex flex-col gap-3 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
             {"// "}CÓMO TRABAJO
           </p>
@@ -21,9 +27,11 @@ export function Process() {
 
         {/* 4 Process Cards (Mobile: 1 column, sm: 2 columns, lg: 4 columns) */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {workProcess.map((step) => (
+          {workProcess.map((step, index) => (
             <div
               key={step.step}
+              data-reveal
+              data-reveal-delay={String(index + 1)}
               className="relative flex flex-col justify-between rounded-xl border border-border bg-surface p-6 transition-all hover:border-border-strong sm:p-7"
             >
               <div className="flex flex-col gap-3">

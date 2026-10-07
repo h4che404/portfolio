@@ -3,10 +3,10 @@ import { profile, skills } from "@/content/profile";
 
 export function About() {
   return (
-    <section id="sobre-mi" className="border-b border-border py-16 sm:py-24">
+    <section id="sobre-mi" className="relative overflow-hidden py-16 sm:py-24">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-3 max-w-3xl">
+        <div data-reveal className="flex flex-col gap-3 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
             {"// "}SOBRE MÍ
           </p>
@@ -23,14 +23,14 @@ export function About() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Left Column: Bio & Background (lg: 7 cols) */}
           <div className="flex flex-col gap-6 lg:col-span-7">
-            <div className="flex flex-col gap-4 text-sm leading-relaxed text-muted sm:text-base">
+            <div data-reveal className="flex flex-col gap-4 text-sm leading-relaxed text-muted sm:text-base">
               {profile.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
             {/* Quick stats/highlights */}
-            <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-3">
+            <div data-reveal data-reveal-delay="2" className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-3">
               <div className="rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
                 <span className="font-mono text-xl font-bold text-accent sm:text-2xl">
                   {profile.yearsActive}+ años
@@ -82,7 +82,7 @@ export function About() {
           </div>
 
           {/* Right Column: Skills Stack (lg: 5 cols) */}
-          <div className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 sm:p-7 lg:col-span-5">
+          <div data-reveal data-reveal-delay="3" className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 sm:p-7 lg:col-span-5">
             <h3 className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
               Tecnologías principales
             </h3>

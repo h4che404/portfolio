@@ -9,7 +9,7 @@ export function Hero() {
     : null;
 
   return (
-    <section className="relative overflow-hidden border-b border-border pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
+    <section className="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
       {/* Subtle warm & purple ambient background glows */}
       <div
         className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-accent/5 blur-[120px] sm:h-[450px] sm:w-[450px]"

@@ -3,10 +3,16 @@ import { idNight, luppi, miPartido } from "@/content/projects";
 
 export function Projects() {
   return (
-    <section id="proyectos" className="border-b border-border py-16 sm:py-24">
+    <section id="proyectos" className="relative overflow-hidden py-16 sm:py-24">
+      {/* Ambient sky/electric blue glow in background */}
+      <div
+        className="pointer-events-none absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-sky-500/5 blur-[140px]"
+        aria-hidden="true"
+      />
+
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-3 max-w-3xl">
+        <div data-reveal className="flex flex-col gap-3 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
             {"// "}PROYECTOS DESTACADOS
           </p>
@@ -21,7 +27,7 @@ export function Projects() {
         </div>
 
         {/* Project 1: ID-Night (Featured) */}
-        <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
+        <article data-reveal className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
           <div className="flex flex-col gap-6 p-6 sm:p-10">
             {/* Top Bar: Badge + Layers */}
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -110,7 +116,7 @@ export function Projects() {
         </article>
 
         {/* Project 2: Luppi (Centro Comercial Digital) */}
-        <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
+        <article data-reveal className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
           <div className="flex flex-col gap-6 p-6 sm:p-10">
             {/* Top Bar: Badge + Layers */}
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -199,7 +205,7 @@ export function Projects() {
         </article>
 
         {/* Project 3: Mi Partido */}
-        <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
+        <article data-reveal className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
           <div className="flex flex-col gap-6 p-6 sm:p-10">
             {/* Top Bar: Badge + Live Link */}
             <div className="flex flex-wrap items-center justify-between gap-3">

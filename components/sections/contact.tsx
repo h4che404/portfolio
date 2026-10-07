@@ -9,10 +9,16 @@ export function Contact() {
     : null;
 
   return (
-    <section id="contacto" className="py-16 sm:py-24">
+    <section id="contacto" className="relative overflow-hidden py-16 sm:py-24">
+      {/* Ambient glow at the bottom */}
+      <div
+        className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-96 w-full max-w-3xl rounded-full bg-accent/5 blur-[150px]"
+        aria-hidden="true"
+      />
+
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-3 max-w-3xl">
+        <div data-reveal className="flex flex-col gap-3 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
             {"// "}CONTACTO
           </p>
@@ -27,8 +33,8 @@ export function Contact() {
 
         {/* 2-Column Responsive Layout (Mobile: 1 column, lg: 12 cols grid) */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* Direct channels (Mobile first: order 2 on mobile or order 1? Let's put direct channels first or alongside) */}
-          <div className="flex flex-col gap-6 lg:col-span-5">
+          {/* Direct channels */}
+          <div data-reveal className="flex flex-col gap-6 lg:col-span-5">
             {/* WhatsApp Card */}
             {whatsappUrl && (
               <a
@@ -94,7 +100,7 @@ export function Contact() {
           </div>
 
           {/* Form Column */}
-          <div className="lg:col-span-7">
+          <div data-reveal data-reveal-delay="2" className="lg:col-span-7">
             <ContactForm />
           </div>
         </div>

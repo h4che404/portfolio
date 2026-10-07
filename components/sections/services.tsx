@@ -2,10 +2,16 @@ import { services } from "@/content/services";
 
 export function Services() {
   return (
-    <section id="servicios" className="border-b border-border py-16 sm:py-24">
+    <section id="servicios" className="relative overflow-hidden py-16 sm:py-24">
+      {/* Ambient subtle purple light */}
+      <div
+        className="pointer-events-none absolute -top-32 right-1/4 h-96 w-96 rounded-full bg-purple-600/5 blur-[140px]"
+        aria-hidden="true"
+      />
+
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col gap-3 max-w-3xl">
+        <div data-reveal className="flex flex-col gap-3 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
             {"// "}SERVICIOS
           </p>
@@ -20,10 +26,12 @@ export function Services() {
 
         {/* Services Grid (Mobile-first: 1 column, md+: 2 columns) */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <article
               key={service.id}
-              className="group relative flex flex-col justify-between rounded-xl border border-border bg-surface p-6 transition-all duration-200 hover:border-border-strong hover:bg-surface-raised sm:p-8"
+              data-reveal
+              data-reveal-delay={String(index + 1)}
+              className="group relative flex flex-col justify-between rounded-xl border border-border bg-surface p-6 transition-all duration-200 hover:border-purple-500/30 hover:bg-surface-raised hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.12)] sm:p-8"
             >
               <div className="flex flex-col gap-4">
                 {/* Header with optional badge */}
