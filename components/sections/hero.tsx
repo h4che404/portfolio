@@ -27,11 +27,11 @@ export function Hero() {
           <div className="flex flex-col gap-6 lg:col-span-7">
             {/* Availability Badge */}
             <div className="flex flex-wrap items-center gap-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-xs text-muted shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>{profile.location}</span>
-                <span className="text-border-strong">·</span>
-                <span className="text-foreground font-medium">
+              <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-[11px] sm:text-xs text-muted shadow-sm">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="shrink-0">{profile.location}</span>
+                <span className="text-border-strong shrink-0">·</span>
+                <span className="truncate text-foreground font-medium">
                   {profile.availability}
                 </span>
               </div>

@@ -86,17 +86,17 @@ export default async function ProjectPage({ params }: PageProps) {
 
           {/* Visual Preview */}
           <div className="overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl">
-            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
-              <div className="flex items-center gap-1.5">
+            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-3 sm:px-4 py-2.5">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
               </div>
-              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>idnight.app</span>
+              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-2.5 sm:px-3 py-1 font-mono text-[11px] text-muted max-w-[170px] sm:max-w-none">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <span className="truncate">idnight.app</span>
               </div>
-              <span className="font-mono text-[10px] text-muted uppercase tracking-wider">Producción</span>
+              <span className="hidden sm:inline font-mono text-[10px] text-muted uppercase tracking-wider">Producción</span>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden bg-background">
               <Image
@@ -250,17 +250,17 @@ export default async function ProjectPage({ params }: PageProps) {
           </section>
 
           {/* Back Footer */}
-          <div className="border-t border-border pt-6 flex justify-between items-center">
+          <div className="border-t border-border pt-6 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center gap-4">
             <Link
               href="/#proyectos"
-              className="inline-flex min-h-[44px] items-center gap-2 font-mono text-xs text-muted hover:text-accent transition-colors"
+              className="inline-flex min-h-[44px] items-center justify-center sm:justify-start gap-2 font-mono text-xs text-muted hover:text-accent transition-colors"
             >
               <span>←</span>
               <span>Volver a proyectos</span>
             </Link>
             <Link
               href="/#contacto"
-              className="inline-flex min-h-[44px] items-center rounded-lg bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
             >
               Hablemos
             </Link>
@@ -312,17 +312,17 @@ export default async function ProjectPage({ params }: PageProps) {
 
           {/* Visual Preview */}
           <div className="overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl">
-            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
-              <div className="flex items-center gap-1.5">
+            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-3 sm:px-4 py-2.5">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
               </div>
-              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>app-vuelve-dashboard.vercel.app</span>
+              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-2.5 sm:px-3 py-1 font-mono text-[11px] text-muted max-w-[170px] sm:max-w-none">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse shrink-0" />
+                <span className="truncate">app-vuelve-dashboard.vercel.app</span>
               </div>
-              <span className="font-mono text-[10px] text-muted uppercase tracking-wider">POS Dashboard</span>
+              <span className="hidden sm:inline font-mono text-[10px] text-muted uppercase tracking-wider">POS Dashboard</span>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden bg-background">
               <Image
@@ -496,7 +496,7 @@ export default async function ProjectPage({ params }: PageProps) {
               href={luppi.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
+              className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
             >
               <span>Visitar panel comercial en producción</span>
               <span>↗</span>
@@ -504,17 +504,17 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
 
           {/* Back Footer */}
-          <div className="border-t border-border pt-6 flex justify-between items-center">
+          <div className="border-t border-border pt-6 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center gap-4">
             <Link
               href="/#proyectos"
-              className="inline-flex min-h-[44px] items-center gap-2 font-mono text-xs text-muted hover:text-accent transition-colors"
+              className="inline-flex min-h-[44px] items-center justify-center sm:justify-start gap-2 font-mono text-xs text-muted hover:text-accent transition-colors"
             >
               <span>←</span>
               <span>Volver a proyectos</span>
             </Link>
             <Link
               href="/#contacto"
-              className="inline-flex min-h-[44px] items-center rounded-lg bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
             >
               Hablemos
             </Link>
@@ -565,17 +565,17 @@ export default async function ProjectPage({ params }: PageProps) {
 
           {/* Visual Preview */}
           <div className="overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl">
-            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
-              <div className="flex items-center gap-1.5">
+            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-3 sm:px-4 py-2.5">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
               </div>
-              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>mipartidoapp.com</span>
+              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-2.5 sm:px-3 py-1 font-mono text-[11px] text-muted max-w-[170px] sm:max-w-none">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <span className="truncate">mipartidoapp.com</span>
               </div>
-              <span className="font-mono text-[10px] text-muted uppercase tracking-wider">Web & App</span>
+              <span className="hidden sm:inline font-mono text-[10px] text-muted uppercase tracking-wider">Web & App</span>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden bg-background">
               <Image
@@ -620,7 +620,7 @@ export default async function ProjectPage({ params }: PageProps) {
               href={miPartido.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
+              className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
             >
               <span>Ver sitio web en producción (mipartidoapp.com)</span>
               <span>↗</span>
@@ -628,13 +628,19 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
 
           {/* Back Footer */}
-          <div className="border-t border-border pt-6 flex justify-between items-center">
+          <div className="border-t border-border pt-6 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center gap-4">
             <Link
               href="/#proyectos"
-              className="inline-flex min-h-[44px] items-center gap-2 font-mono text-xs text-muted hover:text-accent transition-colors"
+              className="inline-flex min-h-[44px] items-center justify-center sm:justify-start gap-2 font-mono text-xs text-muted hover:text-accent transition-colors"
             >
               <span>←</span>
               <span>Volver a proyectos</span>
+            </Link>
+            <Link
+              href="/#contacto"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-wider text-accent-foreground hover:bg-accent-hover transition-colors"
+            >
+              Hablemos
             </Link>
           </div>
         </div>

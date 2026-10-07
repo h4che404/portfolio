@@ -37,17 +37,17 @@ export function Projects() {
             <div className="lg:col-span-7 flex flex-col">
               <div className="relative overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl group/preview">
                 {/* Browser bar */}
-                <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
-                  <div className="flex items-center gap-1.5">
+                <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-3 sm:px-4 py-2.5">
+                  <div className="flex items-center gap-1.5 shrink-0">
                     <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
                   </div>
-                  <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="truncate max-w-[180px] sm:max-w-none">idnight.app</span>
+                  <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-2.5 sm:px-3 py-1 font-mono text-[11px] text-muted max-w-[170px] sm:max-w-none">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                    <span className="truncate">idnight.app</span>
                   </div>
-                  <span className="font-mono text-[10px] text-muted uppercase tracking-wider">Web app</span>
+                  <span className="hidden sm:inline font-mono text-[10px] text-muted uppercase tracking-wider">Web app</span>
                 </div>
 
                 {/* Screenshot Image */}
@@ -138,24 +138,26 @@ export function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <a
-                  href={idNight.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
-                >
-                  <span>Visitar sitio</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
+              <div className="flex flex-col gap-2.5 pt-2 sm:flex-row sm:items-center">
+                <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center">
+                  <a
+                    href={idNight.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
+                  >
+                    <span>Visitar sitio</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
 
-                <Link
-                  href={`/proyectos/${idNight.slug}`}
-                  className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface-raised px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
-                >
-                  <span>Caso técnico</span>
-                  <span aria-hidden="true">→</span>
-                </Link>
+                  <Link
+                    href={`/proyectos/${idNight.slug}`}
+                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+                  >
+                    <span>Caso técnico</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
 
                 <a
                   href={idNight.repos[0]?.url}
@@ -182,17 +184,17 @@ export function Projects() {
             <div className="lg:col-span-7 flex flex-col">
               <div className="relative overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl group/preview">
                 {/* Browser bar */}
-                <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
-                  <div className="flex items-center gap-1.5">
+                <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-3 sm:px-4 py-2.5">
+                  <div className="flex items-center gap-1.5 shrink-0">
                     <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
                   </div>
-                  <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="truncate max-w-[180px] sm:max-w-none">app-vuelve-dashboard.vercel.app</span>
+                  <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-2.5 sm:px-3 py-1 font-mono text-[11px] text-muted max-w-[170px] sm:max-w-none">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse shrink-0" />
+                    <span className="truncate">app-vuelve-dashboard.vercel.app</span>
                   </div>
-                  <span className="font-mono text-[10px] text-muted uppercase tracking-wider">POS Dashboard</span>
+                  <span className="hidden sm:inline font-mono text-[10px] text-muted uppercase tracking-wider">POS Dashboard</span>
                 </div>
 
                 {/* Screenshot Image */}
@@ -282,24 +284,26 @@ export function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <a
-                  href={luppi.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
-                >
-                  <span>Panel en vivo</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
+              <div className="flex flex-col gap-2.5 pt-2 sm:flex-row sm:items-center">
+                <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center">
+                  <a
+                    href={luppi.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
+                  >
+                    <span>Panel en vivo</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
 
-                <Link
-                  href={`/proyectos/${luppi.slug}`}
-                  className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface-raised px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
-                >
-                  <span>Caso técnico</span>
-                  <span aria-hidden="true">→</span>
-                </Link>
+                  <Link
+                    href={`/proyectos/${luppi.slug}`}
+                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+                  >
+                    <span>Caso técnico</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
 
                 <a
                   href={luppi.repos[0]?.url}
@@ -326,17 +330,17 @@ export function Projects() {
             <div className="lg:col-span-7 flex flex-col">
               <div className="relative overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl group/preview">
                 {/* Browser bar */}
-                <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
-                  <div className="flex items-center gap-1.5">
+                <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-3 sm:px-4 py-2.5">
+                  <div className="flex items-center gap-1.5 shrink-0">
                     <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
                   </div>
-                  <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    <span className="truncate max-w-[180px] sm:max-w-none">mipartidoapp.com</span>
+                  <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-2.5 sm:px-3 py-1 font-mono text-[11px] text-muted max-w-[170px] sm:max-w-none">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    <span className="truncate">mipartidoapp.com</span>
                   </div>
-                  <span className="font-mono text-[10px] text-muted uppercase tracking-wider">Web & App</span>
+                  <span className="hidden sm:inline font-mono text-[10px] text-muted uppercase tracking-wider">Web & App</span>
                 </div>
 
                 {/* Screenshot Image */}
@@ -423,12 +427,12 @@ export function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center pt-2">
                 <a
                   href={miPartido.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
+                  className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
                 >
                   <span>Visitar sitio</span>
                   <span aria-hidden="true">↗</span>
@@ -436,7 +440,7 @@ export function Projects() {
 
                 <Link
                   href={`/proyectos/${miPartido.slug}`}
-                  className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface-raised px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+                  className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
                 >
                   <span>Detalle técnico</span>
                   <span aria-hidden="true">→</span>
