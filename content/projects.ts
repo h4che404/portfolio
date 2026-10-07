@@ -16,6 +16,9 @@ export interface BaseProject {
   status: string;
   stack: readonly string[];
   liveUrl?: string;
+  image?: string;
+  imageAlt?: string;
+  highlights?: readonly string[];
   repos?: readonly Repo[];
 }
 
@@ -25,6 +28,13 @@ export const idNight = {
   tagline: "Identidad verificada y control de acceso biométrico para eventos y locales nocturnos.",
   status: "En desarrollo activo · Buscando primeros clientes",
   liveUrl: "https://idnight.app",
+  image: "/projects/id-night.png",
+  imageAlt: "Plataforma web de identidad y control de acceso ID-Night",
+  highlights: [
+    "Validación biométrica facial rápida con microservicio ONNX",
+    "Credencial digital offline-first en PWA con QR dinámico",
+    "Arquitectura distribuida en .NET 10, FastAPI y PostgreSQL",
+  ] as const,
   pillars: [
     { layer: "Backend", value: ".NET 10" },
     { layer: "Biometría", value: "FastAPI · ONNX" },
@@ -156,6 +166,13 @@ export const luppi = {
   tagline: "El centro comercial digital y plataforma de fidelización para comercios locales.",
   status: "En desarrollo y fase de validación · Piloto en Zona Este de Mendoza",
   liveUrl: "https://app-vuelve-dashboard.vercel.app",
+  image: "/projects/luppi.png",
+  imageAlt: "Terminal de cobro y panel comercial Luppi",
+  highlights: [
+    "Terminal POS de cobro rápido y asignación de sellos en 10s",
+    "Fidelización barrial por DNI/QR sin descargas pesadas",
+    "Monorepo en Turborepo con Fastify, Redis y Next.js",
+  ] as const,
   pillars: [
     { layer: "Backend API", value: "Fastify · Drizzle · Redis" },
     { layer: "Persistencia", value: "PostgreSQL multi-tenant" },
@@ -246,6 +263,13 @@ export const miPartido = {
   tagline: "Plataforma de organización deportiva para jugadores y sistema de gestión de turnos para canchas.",
   status: "Desarrollo completado y publicado · Sin operación comercial activa",
   liveUrl: "https://mipartidoapp.com",
+  image: "/projects/mi-partido.png",
+  imageAlt: "Plataforma web deportiva y reservas de canchas Mi Partido",
+  highlights: [
+    "App móvil para jugadores (Fútbol, Pádel, Tenis) en Kotlin Multiplatform",
+    "Panel para canchas orientado a optimizar turnos y horarios valle",
+    "Sitio web publicado en Next.js con mapas interactivos sobre Leaflet",
+  ] as const,
   clientSummary:
     "Ecosistema para fútbol, pádel y tenis en Mendoza: app móvil para jugadores (armado de equipos, búsqueda de rivales y confirmación) junto con portal y herramientas para complejos de canchas orientadas a optimizar ocupación en horarios valle y reducir cancelaciones.",
   body: [

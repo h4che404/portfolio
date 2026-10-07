@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { idNight, luppi, miPartido } from "@/content/projects";
@@ -82,6 +83,33 @@ export default async function ProjectPage({ params }: PageProps) {
               {idNight.tagline}
             </p>
           </header>
+
+          {/* Visual Preview */}
+          <div className="overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
+              </div>
+              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>idnight.app</span>
+              </div>
+              <span className="font-mono text-[10px] text-muted uppercase tracking-wider">Producción</span>
+            </div>
+            <div className="relative aspect-[16/10] overflow-hidden bg-background">
+              <Image
+                src={idNight.image}
+                alt={idNight.imageAlt}
+                width={1280}
+                height={800}
+                priority
+                sizes="(max-width: 1024px) 100vw, 896px"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+          </div>
 
           {/* Pillars Strip */}
           <div className="grid grid-cols-2 gap-3 rounded-xl border border-border bg-surface p-4 sm:grid-cols-4 sm:gap-4 sm:p-5">
@@ -281,6 +309,33 @@ export default async function ProjectPage({ params }: PageProps) {
               {luppi.tagline}
             </p>
           </header>
+
+          {/* Visual Preview */}
+          <div className="overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
+              </div>
+              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>app-vuelve-dashboard.vercel.app</span>
+              </div>
+              <span className="font-mono text-[10px] text-muted uppercase tracking-wider">POS Dashboard</span>
+            </div>
+            <div className="relative aspect-[16/10] overflow-hidden bg-background">
+              <Image
+                src={luppi.image}
+                alt={luppi.imageAlt}
+                width={1280}
+                height={800}
+                priority
+                sizes="(max-width: 1024px) 100vw, 896px"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+          </div>
 
           {/* Pillars Strip */}
           <div className="grid grid-cols-2 gap-3 rounded-xl border border-border bg-surface p-4 sm:grid-cols-4 sm:gap-4 sm:p-5">
@@ -507,6 +562,33 @@ export default async function ProjectPage({ params }: PageProps) {
               {miPartido.tagline}
             </p>
           </header>
+
+          {/* Visual Preview */}
+          <div className="overflow-hidden rounded-xl border border-border-strong bg-background/90 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-border bg-surface-raised/90 px-4 py-2.5">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-rose-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
+              </div>
+              <div className="flex items-center gap-2 rounded-md border border-border bg-background/70 px-3 py-1 font-mono text-[11px] text-muted">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>mipartidoapp.com</span>
+              </div>
+              <span className="font-mono text-[10px] text-muted uppercase tracking-wider">Web & App</span>
+            </div>
+            <div className="relative aspect-[16/10] overflow-hidden bg-background">
+              <Image
+                src={miPartido.image}
+                alt={miPartido.imageAlt}
+                width={1280}
+                height={800}
+                priority
+                sizes="(max-width: 1024px) 100vw, 896px"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+          </div>
 
           {/* Content Body */}
           <article className="flex flex-col gap-6 text-sm sm:text-base leading-relaxed text-muted">
