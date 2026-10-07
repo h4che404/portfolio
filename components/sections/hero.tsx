@@ -106,43 +106,49 @@ export function Hero() {
               <div className="relative flex w-full items-center justify-center">
                 {/* Outer orbital halo ring */}
                 <div
-                  className="absolute h-72 w-72 rounded-full border border-purple-500/35 bg-gradient-to-br from-purple-900/30 via-surface/60 to-surface/20 p-3 shadow-[0_0_70px_-12px_rgba(147,51,234,0.4)] sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+                  className="relative flex h-72 w-72 items-center justify-center rounded-full border border-purple-500/30 bg-gradient-to-b from-purple-500/10 via-transparent to-transparent p-3.5 shadow-[0_0_60px_-15px_rgba(147,51,234,0.4)] sm:h-80 sm:w-80 lg:h-96 lg:w-96"
                   aria-hidden="true"
                 >
                   {/* Secondary inner ring with accent orange touch */}
-                  <div className="h-full w-full rounded-full border border-accent/30 bg-gradient-to-b from-purple-500/10 via-transparent to-transparent" />
+                  <div className="h-full w-full rounded-full border border-accent/25" />
                 </div>
 
-                {/* Floating cyber accents */}
-                <span
-                  className="pointer-events-none absolute -left-2 top-14 select-none font-mono text-2xl font-bold text-purple-400/40 sm:-left-4 sm:text-3xl"
-                  aria-hidden="true"
-                >
-                  &lt;
-                </span>
-                <span
-                  className="pointer-events-none absolute -right-2 bottom-14 select-none font-mono text-2xl font-bold text-accent/40 sm:-right-4 sm:text-3xl"
-                  aria-hidden="true"
-                >
-                  /&gt;
-                </span>
+                {/* Photo container with studio gradient backdrop and smooth circular mask */}
+                <div className="absolute h-64 w-64 overflow-hidden rounded-full border-2 border-purple-500/40 bg-gradient-to-tr from-purple-950 via-[#151821] to-amber-950/30 shadow-2xl sm:h-72 sm:w-72 lg:h-84 lg:w-84">
+                  {/* Internal ambient glowing highlights behind the subject */}
+                  <div
+                    className="pointer-events-none absolute -top-8 left-1/2 h-44 w-44 -translate-x-1/2 rounded-full bg-purple-600/30 blur-2xl"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="pointer-events-none absolute bottom-0 right-0 h-36 w-36 rounded-full bg-accent/20 blur-2xl"
+                    aria-hidden="true"
+                  />
 
-                {/* Cutout Photo Layer */}
-                <div className="relative z-10 w-64 pt-4 sm:w-72 lg:w-80">
+                  {/* Cutout Photo Layer */}
                   <Image
                     src="/profile.png"
                     alt={profile.name}
                     width={400}
                     height={400}
                     priority
-                    className="h-auto w-full object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)]"
-                  />
-                  {/* Subtle fade at the very bottom edge */}
-                  <div
-                    className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background via-background/60 to-transparent"
-                    aria-hidden="true"
+                    className="relative z-10 h-full w-full object-cover object-top scale-105"
                   />
                 </div>
+
+                {/* Floating cyber accents */}
+                <span
+                  className="pointer-events-none absolute -left-3 top-10 select-none font-mono text-2xl font-bold text-purple-400/35 sm:-left-5 sm:text-3xl"
+                  aria-hidden="true"
+                >
+                  &lt;
+                </span>
+                <span
+                  className="pointer-events-none absolute -right-3 bottom-10 select-none font-mono text-2xl font-bold text-accent/35 sm:-right-5 sm:text-3xl"
+                  aria-hidden="true"
+                >
+                  /&gt;
+                </span>
               </div>
             </div>
           </div>
