@@ -1,22 +1,20 @@
 export const profile = {
   name: "Juan Cruz Elias Martin",
   shortName: "Juan Cruz",
-  role: "Junior Software Engineer · Full Stack",
+  role: "Software Engineer · Full Stack · IA aplicada",
   location: "Mendoza, Argentina",
-  // Client-facing positioning: what he builds for a business, not which
-  // frameworks he knows.
-  headline: "Diseño y desarrollo productos digitales completos para tu negocio.",
+  headline: "Construyo software y productos digitales de punta a punta.",
   subheadline:
-    "Webs, sistemas a medida, apps móviles e integraciones con inteligencia artificial. Desde la idea hasta el producto funcionando, con comunicación clara en cada etapa.",
+    "Software Engineer especializado en sistemas web, backend robusto, aplicaciones móviles e integraciones con IA aplicada. Enfoque en arquitectura limpia, código tipado y soluciones que resuelven problemas reales.",
   availability: "Disponible para nuevos proyectos",
   yearsActive: 2,
   intro:
-    "Hace dos años que construyo software de punta a punta. Actualmente desarrollo ID-Night (control de acceso biométrico con .NET, microservicio de visión por IA y apps móviles) y Luppi (centro comercial digital y fidelización barrial con Turborepo, Fastify y PWA).",
-  // Short bio for the "Sobre mí" section, written for non-technical readers.
+    "Construyo software de punta a punta: desde el modelado de dominio y persistencia hasta APIs de alto rendimiento, interfaces reactivas y despliegue contenerizado.",
+  // Short bio for the "Sobre mí" section
   bio: [
-    "Soy Junior Software Engineer y desarrollador full stack en Mendoza, Argentina. Hace dos años que construyo software completo: la base de datos, el servidor, la web y las apps móviles, además de integraciones con inteligencia artificial.",
-    "Antes de dedicarme al desarrollo trabajé varios años en atención al cliente y ventas. Esa experiencia me ayuda a entender qué necesita un negocio y a explicar cada decisión técnica en términos simples.",
-    "Estudio la Tecnicatura Universitaria en Programación en la UTN, actualmente en curso.",
+    "Soy Software Engineer enfocado en diseñar y construir sistemas digitales completos desde Mendoza, Argentina. No me limito a interfaces: defino el modelo de datos, la arquitectura del servidor, la aplicación cliente (web o móvil) y el despliegue en la nube.",
+    "Mi trayectoria en estos dos años se define por la evolución técnica a través de productos reales: desde el desarrollo móvil nativo en Mi Partido, pasando por la arquitectura distribuida con biometría e IA en ID-Night, hasta la plataforma SaaS multitenant con monorepo y PWA offline en Luppi.",
+    "Cuento además con experiencia previa en atención y ventas, lo que me da una perspectiva clara para entender necesidades operativas reales y comunicarme de forma directa. Actualmente estudio la Tecnicatura Universitaria en Programación en la UTN.",
   ],
   email: "eliasjuancruz303@gmail.com",
   // International format, digits only (e.g. "5492611234567").
@@ -24,10 +22,37 @@ export const profile = {
   whatsapp: "5492634616717" as string,
   // Prefilled text for wa.me links.
   whatsappMessage:
-    "Hola Juan Cruz, vi tu portfolio y quiero hacerte una consulta sobre un proyecto.",
+    "Hola Juan Cruz, vi tu portfolio y me gustaría conversar sobre una oportunidad / proyecto.",
   github: "https://github.com/h4che404",
   githubHandle: "h4che404",
 } as const;
+
+export const productEvolution = [
+  {
+    period: "2024",
+    project: "Mi Partido",
+    title: "Desarrollo móvil cross-platform & Producto",
+    description:
+      "Construcción de aplicaciones móviles con Kotlin Multiplatform y Compose para Android e iOS, explorando el ciclo completo de producto y validación con usuarios en Mendoza.",
+    stack: ["Kotlin Multiplatform", "Compose", "Next.js", "Leaflet"],
+  },
+  {
+    period: "2024 – 2025",
+    project: "ID-Night",
+    title: "Arquitectura distribuida, IA & Seguridad",
+    description:
+      "Diseño de un backend modular en .NET 10 con Clean Architecture, microservicio facial en Python/FastAPI sobre ONNX Runtime y credenciales PWA dinámicas con QR rotativo.",
+    stack: [".NET 10", "Python", "FastAPI", "ONNX", "PostgreSQL"],
+  },
+  {
+    period: "2025 – 2026",
+    project: "Luppi",
+    title: "Plataforma SaaS, Monorepo & PWA Offline",
+    description:
+      "Arquitectura multitenant orientada a centros comerciales digitales y comercios barriales. Monorepo en Turborepo con Fastify, Drizzle ORM y PWA offline-first para puntos de venta.",
+    stack: ["Fastify", "Turborepo", "Drizzle ORM", "PostgreSQL", "PWA"],
+  },
+] as const;
 
 // Fill this in to render the Education block on the CV page.
 // Leaving it empty simply hides the section.

@@ -51,8 +51,8 @@ export default async function OpenGraphImage() {
               letterSpacing: "-0.03em",
             }}
           >
-            <span>DESARROLLO DE SOFTWARE</span>
-            <span style={{ color: "#f59e0b" }}>PRODUCTOS COMPLETOS</span>
+            <span>SOFTWARE ENGINEER</span>
+            <span style={{ color: "#f59e0b" }}>SISTEMAS DE PUNTA A PUNTA</span>
           </div>
           <p
             style={{
@@ -62,7 +62,7 @@ export default async function OpenGraphImage() {
               fontFamily: "JetBrains Mono",
             }}
           >
-            Webs de alto impacto · Sistemas a medida · Apps móviles · IA
+            Arquitectura Web · Backend Distribuido · Apps Móviles · IA Aplicada
           </p>
         </div>
 

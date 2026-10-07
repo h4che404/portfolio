@@ -5,7 +5,7 @@ import Link from "next/link";
 import { profile } from "@/content/profile";
 
 const NAV_ITEMS = [
-  { href: "#servicios", label: "Servicios" },
+  { href: "#ingenieria", label: "Ingeniería" },
   { href: "#proyectos", label: "Proyectos" },
   { href: "#proceso", label: "Cómo trabajo" },
   { href: "#sobre-mi", label: "Sobre mí" },

@@ -29,27 +29,28 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${profile.name} — Desarrollo Web, Sistemas y Apps Móviles`,
+  title: `${profile.name} — Software Engineer · Full Stack & IA aplicada`,
   description:
-    "Desarrollo productos digitales completos para empresas y negocios: aplicaciones web, sistemas de gestión interna, apps móviles e inteligencia artificial aplicada.",
+    "Construyo software y productos digitales de punta a punta: arquitectura web, backend distribuido, aplicaciones móviles multiplataforma e inteligencia artificial aplicada.",
   keywords: [
     "Juan Cruz Elias Martin",
-    "Junior Software Engineer",
-    "Desarrollador Full Stack",
-    "Desarrollo Web Mendoza",
-    "Sistemas a Medida",
-    "Aplicaciones Móviles",
-    "Kotlin Multiplatform",
-    ".NET",
+    "Software Engineer",
+    "Full Stack Developer",
+    "Backend Developer",
+    "Arquitectura de Software",
+    ".NET 10",
+    "Java Spring Boot",
     "Next.js",
+    "Kotlin Multiplatform",
     "IA aplicada",
+    "Mendoza Argentina",
   ],
   authors: [{ name: profile.name, url: siteUrl }],
   creator: profile.name,
   openGraph: {
-    title: `${profile.name} — Desarrollo de Software & Apps`,
+    title: `${profile.name} — Software Engineer · Full Stack & IA aplicada`,
     description:
-      "Diseño y construyo sistemas completos, no pantallas sueltas. Soluciones a medida para negocios y startups.",
+      "Diseño y construyo sistemas completos de punta a punta: desde el modelado de datos hasta el backend, la interfaz y el despliegue en la nube.",
     type: "website",
     locale: "es_AR",
     url: siteUrl,
@@ -57,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — Desarrollo de Software & Apps`,
+    title: `${profile.name} — Software Engineer · Full Stack & IA aplicada`,
     description:
-      "Diseño y construyo sistemas completos para tu negocio: webs, paneles a medida y aplicaciones móviles.",
+      "Construyo software y productos digitales de punta a punta. Arquitectura limpia, código tipado y soluciones que resuelven problemas reales.",
   },
 };
 

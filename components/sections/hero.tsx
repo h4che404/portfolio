@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { profile } from "@/content/profile";
 import { TechIcon } from "@/components/ui/tech-icons";
 
@@ -29,7 +30,7 @@ export function Hero() {
             {/* Availability & Role Badges */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
               <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-accent shadow-sm">
-                Junior Software Engineer
+                Software Engineer · Full Stack
               </span>
               <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-surface px-3 py-1 text-[11px] sm:text-xs text-muted shadow-sm">
                 <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
@@ -44,11 +45,11 @@ export function Hero() {
             {/* Main Headline */}
             <div className="flex flex-col gap-4">
               <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[3.75rem] leading-[1.1]">
-                Diseño y desarrollo{" "}
+                Construyo software y{" "}
                 <span className="text-accent">
-                  productos digitales completos
+                  productos digitales
                 </span>{" "}
-                para tu negocio.
+                de punta a punta.
               </h1>
 
               <p className="max-w-2xl text-base text-muted sm:text-lg sm:leading-relaxed">
@@ -59,11 +60,19 @@ export function Hero() {
             {/* Primary Call-to-actions */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-2">
               <a
-                href="#contacto"
+                href="#proyectos"
                 className="flex min-h-[48px] items-center justify-center rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-md transition-all hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98]"
               >
-                Contame tu proyecto
+                Ver proyectos y arquitectura
               </a>
+
+              <Link
+                href="/cv"
+                className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-5 py-3 text-center text-sm font-medium text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+              >
+                <span>Currículum (CV)</span>
+                <span aria-hidden="true">→</span>
+              </Link>
 
               {whatsappUrl && (
                 <a
@@ -89,10 +98,10 @@ export function Hero() {
               )}
 
               <a
-                href="#proyectos"
+                href="#contacto"
                 className="flex min-h-[48px] items-center justify-center rounded-lg border border-border px-5 py-3 text-center text-sm font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
               >
-                Ver proyectos realizados ↓
+                Contactar ↓
               </a>
             </div>
 
@@ -179,37 +188,37 @@ export function Hero() {
         <div className="grid grid-cols-2 gap-3 pt-6 border-t border-border/60 sm:grid-cols-4 sm:gap-4">
           <div className="flex flex-col gap-0.5">
             <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
-              Arquitectura
+              Backend & APIs
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">
-              Sistemas robustos de punta a punta
+              Clean Architecture, .NET y Java
             </span>
           </div>
 
           <div className="flex flex-col gap-0.5">
             <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
-              Proceso
+              Frontend & Móvil
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">
-              Avances funcionales cada semana
+              Next.js, React y Kotlin Multiplatform
             </span>
           </div>
 
           <div className="flex flex-col gap-0.5">
             <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
-              Desarrollo
+              Datos & Cloud
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">
-              100% código propio y a medida
+              PostgreSQL, Redis y Docker en Azure
             </span>
           </div>
 
           <div className="flex flex-col gap-0.5">
             <span className="text-[11px] uppercase tracking-wider text-accent font-semibold">
-              Trato directo
+              IA Aplicada
             </span>
             <span className="text-xs sm:text-sm font-medium text-foreground">
-              Sin intermediarios ni demoras
+              Modelos ONNX locales y biometría
             </span>
           </div>
         </div>

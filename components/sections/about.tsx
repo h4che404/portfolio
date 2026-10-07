@@ -1,54 +1,85 @@
 import Link from "next/link";
-import { profile } from "@/content/profile";
+import { profile, productEvolution } from "@/content/profile";
 import { TechIcon } from "@/components/ui/tech-icons";
 
-const TECH_STACK = [
-  { name: "Next.js", icon: "nextjs", desc: "Web full stack & SSR" },
-  { name: "React", icon: "react", desc: "Interfaces interactivas" },
-  { name: "TypeScript", icon: "typescript", desc: "Código robusto y tipado" },
-  { name: "Tailwind CSS", icon: "tailwind", desc: "Diseño responsive y moderno" },
-  { name: ".NET / C#", icon: "dotnet", desc: "Arquitectura backend sólida" },
-  { name: "Java / Spring Boot", icon: "java", desc: "Sistemas backend y APIs" },
-  { name: "Node.js", icon: "nodejs", desc: "Microservicios y endpoints" },
-  { name: "Python", icon: "python", desc: "Inteligencia artificial aplicada" },
-  { name: "PostgreSQL", icon: "postgres", desc: "Bases de datos confiables" },
-  { name: "Docker", icon: "docker", desc: "Contenedores y despliegues" },
-  { name: "Kotlin", icon: "kotlin", desc: "Aplicaciones móviles" },
-  { name: "Redis", icon: "redis", desc: "Rendimiento y caché rápida" },
-  { name: "Azure / Cloud", icon: "azure", desc: "Infraestructura en la nube" },
-  { name: "Git", icon: "git", desc: "Integración y control seguro" },
+const SYSTEM_LAYERS = [
+  {
+    layer: "Frontend & Móvil",
+    focus: "Interfaces reactivas, SSR y apps multiplataforma",
+    tools: [
+      { name: "Next.js", icon: "nextjs" },
+      { name: "React 19", icon: "react" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Kotlin Multiplatform", icon: "kotlin" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+    ],
+  },
+  {
+    layer: "Backend & APIs",
+    focus: "Clean Architecture, APIs tipadas y microservicios",
+    tools: [
+      { name: ".NET 10 / C#", icon: "dotnet" },
+      { name: "Java / Spring Boot", icon: "java" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Fastify", icon: "fastify" },
+    ],
+  },
+  {
+    layer: "Persistencia & Rendimiento",
+    focus: "Modelado relacional estricto y caché en memoria",
+    tools: [
+      { name: "PostgreSQL", icon: "postgres" },
+      { name: "Redis", icon: "redis" },
+    ],
+  },
+  {
+    layer: "Cloud & DevOps",
+    focus: "Contenedores Docker, CI/CD y nube en producción",
+    tools: [
+      { name: "Docker", icon: "docker" },
+      { name: "Azure", icon: "azure" },
+      { name: "Git", icon: "git" },
+    ],
+  },
+  {
+    layer: "IA Aplicada",
+    focus: "Inferencia local optimizada y modelos de visión",
+    tools: [
+      { name: "Python / FastAPI", icon: "python" },
+    ],
+  },
 ] as const;
 
 export function About() {
   return (
     <section id="sobre-mi" className="relative overflow-hidden py-16 sm:py-24">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div data-reveal className="flex flex-col gap-3 max-w-3xl">
           <p className="text-xs uppercase tracking-widest text-accent font-semibold">
-            SOBRE MÍ
+            SOBRE MÍ & TRAYECTORIA
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Detrás del desarrollo
+            Criterio de ingeniería, arquitectura y visión de producto
           </h2>
           <p className="text-base text-muted sm:text-lg">
-            Combinación de criterio técnico, arquitectura limpia y comunicación
-            comercial transparente.
+            No me defino por un listado de tecnologías, sino por la capacidad de entender el
+            problema, diseñar la arquitectura completa y construir el software de punta a punta.
           </p>
         </div>
 
-        {/* Content Layout (Mobile: 1 column, lg: 2 columns) */}
+        {/* Top Split: Bio & Background vs Highlights */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lg:items-start">
-          {/* Left Column: Bio & Background (lg: 6 cols) */}
-          <div className="flex flex-col gap-6 lg:col-span-6">
-            <div data-reveal className="flex flex-col gap-4 text-sm leading-relaxed text-muted sm:text-base">
+          {/* Left Column: Bio Narrative (lg: 7 cols) */}
+          <div data-reveal className="flex flex-col gap-6 lg:col-span-7">
+            <div className="flex flex-col gap-4 text-sm leading-relaxed text-muted sm:text-base">
               {profile.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
             {/* Quick stats/highlights */}
-            <div data-reveal data-reveal-delay="2" className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
               <div className="rounded-xl border border-border bg-surface p-4 flex flex-col gap-1">
                 <span className="text-2xl font-bold text-accent sm:text-3xl">
                   {profile.yearsActive}+ años
@@ -77,7 +108,7 @@ export function About() {
               </div>
             </div>
 
-            {/* Links */}
+            {/* Direct Links */}
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
               <Link
                 href="/cv"
@@ -99,41 +130,107 @@ export function About() {
             </div>
           </div>
 
-          {/* Right Column: Visual Tech Stack with Logos (lg: 6 cols) */}
-          <div data-reveal data-reveal-delay="3" className="flex flex-col gap-5 rounded-2xl border border-border bg-surface p-6 sm:p-7 lg:col-span-6">
-            <div className="flex items-center justify-between">
+          {/* Right Column: Engineering System Layers (lg: 5 cols) */}
+          <div data-reveal data-reveal-delay="2" className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-5 sm:p-6 lg:col-span-5">
+            <div className="flex items-center justify-between border-b border-border/60 pb-3">
               <h3 className="text-xs uppercase tracking-widest text-accent font-semibold">
-                Tecnologías y herramientas
+                Capas de Ingeniería
               </h3>
-              <span className="text-[11px] text-muted">
-                Stack principal
+              <span className="font-mono text-[10px] text-muted">
+                Frontend → Infra
               </span>
             </div>
 
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-              {TECH_STACK.map((tech) => (
+            <div className="flex flex-col gap-3">
+              {SYSTEM_LAYERS.map((layer, index) => (
                 <div
-                  key={tech.name}
-                  className="group flex items-center gap-3 rounded-xl border border-border/80 bg-surface-raised/50 p-2.5 transition-all duration-200 hover:border-accent/40 hover:bg-surface-raised"
+                  key={layer.layer}
+                  className="rounded-xl border border-border/80 bg-surface-raised/40 p-3 transition-colors hover:border-accent/40"
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-colors group-hover:text-accent">
-                    <TechIcon name={tech.icon} size={18} />
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs font-semibold text-foreground">
+                      {layer.layer}
+                    </span>
+                    <span className="font-mono text-[10px] text-accent">
+                      0{index + 1}
+                    </span>
                   </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-xs font-semibold text-foreground truncate group-hover:text-accent transition-colors">
-                      {tech.name}
-                    </span>
-                    <span className="text-[10px] text-muted truncate">
-                      {tech.desc}
-                    </span>
+                  <p className="text-[11px] text-muted mb-2 leading-tight">
+                    {layer.focus}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {layer.tools.map((t) => (
+                      <span
+                        key={t.name}
+                        className="inline-flex items-center gap-1 rounded-md border border-border bg-surface px-2 py-0.5 text-[10px] font-medium text-foreground/90"
+                      >
+                        <TechIcon name={t.icon} size={12} className="text-muted" />
+                        <span>{t.name}</span>
+                      </span>
+                    ))}
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
 
-            <p className="pt-2 border-t border-border/60 text-xs text-muted leading-relaxed">
-              Herramientas modernas enfocadas en seguridad, velocidad y estabilidad para tu producto digital.
+        {/* Bottom Section: Product Evolution Narrative (2 Years) */}
+        <div data-reveal data-reveal-delay="3" className="flex flex-col gap-6 pt-6 border-t border-border/70">
+          <div className="flex flex-col gap-1 max-w-2xl">
+            <p className="text-xs uppercase tracking-widest text-accent font-semibold">
+              EVOLUCIÓN EN 2 AÑOS
             </p>
+            <h3 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+              Crecimiento técnico a través de productos reales
+            </h3>
+            <p className="text-xs sm:text-sm text-muted">
+              Cada proyecto representó un salto cualitativo en escala, arquitectura y complejidad de dominio.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {productEvolution.map((item, index) => (
+              <div
+                key={item.project}
+                className="group relative flex flex-col justify-between rounded-xl border border-border bg-surface p-5 transition-all duration-200 hover:border-accent/40 hover:bg-surface-raised sm:p-6"
+              >
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-semibold text-accent">
+                      {item.period}
+                    </span>
+                    <span className="rounded-full border border-border bg-surface px-2 py-0.5 font-mono text-[10px] text-muted">
+                      Etapa 0{index + 1}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <h4 className="text-base font-bold text-foreground group-hover:text-accent transition-colors">
+                      {item.project}
+                    </h4>
+                    <span className="text-xs font-medium text-foreground/90">
+                      {item.title}
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-muted leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-border/60 flex flex-wrap gap-1.5">
+                  {item.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded bg-surface-raised px-2 py-0.5 font-mono text-[10px] text-muted"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

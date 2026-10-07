@@ -2,7 +2,10 @@ import { services } from "@/content/services";
 
 export function Services() {
   return (
-    <section id="servicios" className="relative overflow-hidden py-16 sm:py-24">
+    <section id="ingenieria" className="relative overflow-hidden py-16 sm:py-24">
+      {/* Anchor alias for backwards compatibility */}
+      <span id="servicios" className="sr-only" aria-hidden="true" />
+
       {/* Ambient subtle purple light */}
       <div
         className="pointer-events-none absolute -top-32 right-1/4 h-96 w-96 rounded-full bg-purple-600/5 blur-[140px]"
@@ -13,18 +16,18 @@ export function Services() {
         {/* Section Header */}
         <div data-reveal className="flex flex-col gap-3 max-w-3xl">
           <p className="text-xs uppercase tracking-widest text-accent font-semibold">
-            SERVICIOS
+            CAPACIDADES DE INGENIERÍA
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Soluciones de software pensadas para resolver problemas reales
+            Construcción de sistemas de punta a punta
           </h2>
           <p className="text-base text-muted sm:text-lg">
-            Desarrollo sin intermediarios: desde el diagnóstico inicial hasta la
-            puesta en producción en la nube con soporte continuo.
+            No desarrollo pantallas desconectadas ni plantillas genéricas. Asumo el ciclo completo:
+            modelado de dominio, backend robusto, interfaces reactivas y despliegue en la nube.
           </p>
         </div>
 
-        {/* Services Grid (Mobile-first: 1 column, md+: 2 columns) */}
+        {/* Engineering Capabilities Grid (Mobile-first: 1 column, md+: 2 columns) */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
           {services.map((service, index) => (
             <article
@@ -54,10 +57,10 @@ export function Services() {
                   {service.description}
                 </p>
 
-                {/* Deliverables list */}
+                {/* Focus areas list */}
                 <div className="pt-2">
                   <h4 className="font-mono text-[11px] uppercase tracking-wider text-muted font-semibold mb-3">
-                    Qué incluye:
+                    Enfoque y prácticas:
                   </h4>
                   <ul className="flex flex-col gap-2">
                     {service.deliverables.map((item) => (
@@ -79,17 +82,17 @@ export function Services() {
               <div className="mt-6 pt-5 border-t border-border flex flex-col gap-4">
                 <p className="text-xs text-muted">
                   <span className="font-semibold text-foreground/80">
-                    Ideal para:{" "}
+                    Aplicación clave:{" "}
                   </span>
                   {service.idealFor}
                 </p>
 
                 <a
-                  href="#contacto"
+                  href="#proyectos"
                   className="inline-flex min-h-[44px] items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent transition-colors hover:text-accent-hover group-hover:underline underline-offset-4"
                 >
-                  <span>Consultar por este servicio</span>
-                  <span aria-hidden="true">→</span>
+                  <span>Ver aplicación en proyectos</span>
+                  <span aria-hidden="true">↓</span>
                 </a>
               </div>
             </article>
