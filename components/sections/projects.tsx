@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { idNight, miPartido } from "@/content/projects";
+import { idNight, luppi, miPartido } from "@/content/projects";
 
 export function Projects() {
   return (
@@ -109,7 +109,96 @@ export function Projects() {
           </div>
         </article>
 
-        {/* Project 2: Mi Partido */}
+        {/* Project 2: Luppi (Centro Comercial Digital) */}
+        <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
+          <div className="flex flex-col gap-6 p-6 sm:p-10">
+            {/* Top Bar: Badge + Layers */}
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 font-mono text-[11px] font-medium text-amber-400">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+                {luppi.status}
+              </span>
+
+              <div className="flex items-center gap-3">
+                <a
+                  href={luppi.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs text-accent transition-colors hover:underline underline-offset-4"
+                >
+                  <span>app-vuelve-dashboard.vercel.app</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <span className="hidden sm:inline text-border-strong font-mono text-xs">·</span>
+                <span className="hidden sm:inline font-mono text-xs text-muted">
+                  Multi-tenant SaaS
+                </span>
+              </div>
+            </div>
+
+            {/* Title & Tagline */}
+            <div className="flex flex-col gap-2">
+              <h3 className="text-2xl font-black tracking-tight text-foreground sm:text-4xl">
+                {luppi.name}
+              </h3>
+              <p className="text-base font-medium text-accent sm:text-xl">
+                {luppi.tagline}
+              </p>
+            </div>
+
+            {/* Client-facing summary */}
+            <p className="text-sm leading-relaxed text-muted sm:text-base">
+              {luppi.clientSummary}
+            </p>
+
+            {/* 4 Pillars Strip (Mobile: 2x2, Desktop: 1x4) */}
+            <div className="grid grid-cols-2 gap-3 rounded-xl border border-border bg-surface-raised p-4 sm:grid-cols-4 sm:gap-4 sm:p-5">
+              {luppi.pillars.map((pillar) => (
+                <div key={pillar.layer} className="flex flex-col gap-1">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-muted font-semibold">
+                    {pillar.layer}
+                  </span>
+                  <span className="text-xs sm:text-sm font-semibold text-foreground">
+                    {pillar.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
+              <a
+                href={luppi.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
+              >
+                <span>Visitar panel comercial en vivo</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <Link
+                href={`/proyectos/${luppi.slug}`}
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface-raised px-5 py-3 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+              >
+                <span>Ver arquitectura técnica</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+
+              <a
+                href={luppi.repos[0]?.url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-border px-4 py-3 text-center text-xs font-mono font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
+              >
+                <span>Monorepo GitHub</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        {/* Project 3: Mi Partido */}
         <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-200 hover:border-border-strong sm:rounded-3xl">
           <div className="flex flex-col gap-6 p-6 sm:p-10">
             {/* Top Bar: Badge + Live Link */}

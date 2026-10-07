@@ -11,7 +11,7 @@ export const profile = {
   availability: "Disponible para nuevos proyectos",
   yearsActive: 2,
   intro:
-    "Hace dos años que construyo software de punta a punta. Hoy estoy desarrollando ID-Night, una plataforma de identidad y control de acceso para locales nocturnos, con backend en .NET, un servicio propio de verificación facial, apps móviles y una credencial digital que funciona sin señal.",
+    "Hace dos años que construyo software de punta a punta. Actualmente desarrollo ID-Night (control de acceso biométrico con .NET, microservicio de visión por IA y apps móviles) y Luppi (centro comercial digital y fidelización barrial con Turborepo, Fastify y PWA).",
   // Short bio for the "Sobre mí" section, written for non-technical readers.
   bio: [
     "Soy desarrollador full stack y vivo en Mendoza, Argentina. Hace dos años que construyo software completo: la base de datos, el servidor, la web y las apps móviles, además de integraciones con inteligencia artificial.",
@@ -44,10 +44,10 @@ export const education = [
 export const experience = [
   {
     role: "Desarrollador de software — proyectos propios",
-    org: "ID-Night · Mi Partido",
+    org: "ID-Night · Luppi · Mi Partido",
     period: "2024 – presente",
     bullets: [
-      "Diseño e implementación de un backend en .NET 10 con Clean Architecture, PostgreSQL y Entity Framework Core: autenticación, roles y permisos, auditoría, webhooks e integraciones externas.",
+      "Diseño e implementación de backends en .NET 10 (Clean Architecture) y Fastify (Node.js) con PostgreSQL, Drizzle ORM y EF Core: autenticación, roles, auditoría, multi-tenancy e integraciones externas.",
       "Desarrollo de un microservicio de biometría facial en Python/FastAPI con OpenCV, YuNet y SFace sobre ONNX, con comparación 1:1 por embeddings.",
       "Frontends en Next.js y React 19, PWA offline-first con Workbox y aplicaciones móviles en Kotlin Multiplatform con target Android e iOS.",
       "Despliegue y operación sobre Azure (App Service, Container Apps, Container Registry), Docker, Vercel y GitHub Actions.",

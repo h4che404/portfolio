@@ -8,7 +8,7 @@ import {
   profile,
   skills,
 } from "@/content/profile";
-import { idNight, miPartido } from "@/content/projects";
+import { idNight, luppi, miPartido } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: `CV — ${profile.name}`,
@@ -101,6 +101,21 @@ export default function CvPage() {
             </p>
             <ul className="flex flex-col gap-1 pl-4 text-sm leading-relaxed text-neutral-700">
               {idNight.decisions.slice(0, 3).map((decision) => (
+                <li key={decision.title} className="list-disc">
+                  <span className="font-medium">{decision.title}.</span>{" "}
+                  {decision.choice}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <EntryHeader title={luppi.name} meta={luppi.status} />
+            <p className="text-sm leading-relaxed text-neutral-700">
+              {luppi.tagline} {luppi.approach}
+            </p>
+            <ul className="flex flex-col gap-1 pl-4 text-sm leading-relaxed text-neutral-700">
+              {luppi.decisions.slice(0, 2).map((decision) => (
                 <li key={decision.title} className="list-disc">
                   <span className="font-medium">{decision.title}.</span>{" "}
                   {decision.choice}

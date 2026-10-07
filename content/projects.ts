@@ -150,6 +150,96 @@ export const idNight = {
   ] satisfies Repo[],
 } as const;
 
+export const luppi = {
+  slug: "luppi",
+  name: "Luppi",
+  tagline: "El centro comercial digital y plataforma de fidelización para comercios locales.",
+  status: "En desarrollo y fase de validación · Piloto en Zona Este de Mendoza",
+  liveUrl: "https://app-vuelve-dashboard.vercel.app",
+  pillars: [
+    { layer: "Backend API", value: "Fastify · Drizzle · Redis" },
+    { layer: "Persistencia", value: "PostgreSQL multi-tenant" },
+    { layer: "Monorepo", value: "Turborepo" },
+    { layer: "Web & PWA", value: "Next.js · React 19 · PWA" },
+  ] as const satisfies readonly Pillar[],
+  clientSummary:
+    "Plataforma integral que digitaliza la fidelización barrial y conecta el comercio de cercanía. Reemplaza las tarjetas de cartón por identificación rápida mediante DNI o QR en mostrador, permitiendo a los comerciantes registrar visitas, automatizar recompensas y analizar la recurrencia de clientes sin comisiones abusivas.",
+  problem:
+    "Los comercios de cercanía (gastronomía, indumentaria, servicios) pierden contacto con sus clientes habituales o dependen de plataformas de delivery que cobran hasta un 30% de comisión y se apropian de los datos. Al mismo tiempo, los programas de fidelización tradicionales con tarjetas de cartón se pierden, se olvidan y no aportan métricas reales de retención.",
+  approach:
+    "Luppi organiza la solución en un monorepo con Turborepo: una API de alta velocidad en Fastify con PostgreSQL, Redis y Drizzle ORM que aísla datos por comercio; un panel de gestión en Next.js para comerciantes con integración a Meta Graph API (Instagram) para sincronizar catálogos y promociones; una PWA ligera para clientes que acumula sellos y beneficios por DNI o QR sin descargas obligatorias; y una landing de producto.",
+  domainModules: [
+    "merchants",
+    "branches",
+    "customers",
+    "stamps",
+    "rewards",
+    "transactions",
+    "showcase",
+    "instagram-sync",
+    "analytics",
+  ] as const,
+  decisions: [
+    {
+      title: "Monorepo con Turborepo y paquetes compartidos",
+      problem:
+        "Sincronizar contratos de API, esquemas Zod y tipos de TypeScript entre cuatro aplicaciones independientes (API, dashboard comercial, PWA consumidor y landing).",
+      choice:
+        "Turborepo orquestando apps/api, apps/dashboard, apps/consumer y apps/landing, compartiendo paquetes internos de base de datos (@appvuelve/shared-types, config) para garantizar tipado estricto de punta a punta.",
+      tradeoff:
+        "Mayor rigurosidad en la configuración inicial de pipelines y dependencias de workspace, a cambio de cero desfasaje de tipos y reutilización total de contratos.",
+    },
+    {
+      title: "API dedicada en Fastify sobre Drizzle ORM y Redis",
+      problem:
+        "En el mostrador la velocidad de registro de una compra o canje de recompensa debe ser instantánea y no puede tolerar cold starts ni latencias variables de serverless functions.",
+      choice:
+        "Servicio Fastify en Node.js con Drizzle ORM y PostgreSQL, respaldado por Redis para caché de alta velocidad y limitación de tasa.",
+      tradeoff:
+        "Operar un runtime persistente independiente del frontend en Vercel. Se justifica ampliamente por el throughput en horarios pico de comercios y la latencia consistente.",
+    },
+    {
+      title: "Identificación por DNI o QR web sin fricción de descarga nativa",
+      problem:
+        "Exigirle a un cliente descargar una app de 50MB en la fila de una cafetería o comercio reduce drásticamente la tasa de adopción del programa de fidelización.",
+      choice:
+        "Acreditación inmediata mediante DNI en el punto de venta y PWA web responsive en Next.js accesible al instante desde el navegador móvil con escaneo de QR.",
+      tradeoff:
+        "No contar con push notifications nativas tradicionales de iOS sin instalación previa como PWA. A cambio, la conversión en mostrador es inmediata y no requiere fricción.",
+    },
+    {
+      title: "Sincronización de catálogo vía Meta Graph API (Instagram)",
+      problem:
+        "Los comerciantes locales ya cargan fotos, promociones e historias en Instagram y no tienen tiempo ni disposición para mantener un segundo catálogo manual.",
+      choice:
+        "Integración directa con Meta Graph API para importar automáticamente publicaciones, historias y reels de Instagram del negocio al escaparate digital de Luppi.",
+      tradeoff:
+        "Manejo de tokens de larga duración y límites de tasa de Meta. Se resuelve con sincronización asíncrona periódica y almacenamiento en PostgreSQL para desacoplar llamadas en vivo.",
+    },
+  ] satisfies Decision[],
+  stack: [
+    "Turborepo",
+    "Fastify",
+    "PostgreSQL",
+    "Drizzle ORM",
+    "Redis",
+    "Next.js",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS",
+    "PWA",
+    "Meta Graph API",
+    "Zod",
+  ] as const,
+  repos: [
+    {
+      name: "AppVuelve (Luppi)",
+      url: "https://github.com/h4che404/AppVuelve",
+      note: "Turborepo monorepo · Fastify API · Dashboard comercial · PWA consumidor",
+    },
+  ] satisfies Repo[],
+} as const;
+
 export const miPartido = {
   slug: "mi-partido",
   name: "Mi Partido",
@@ -174,4 +264,5 @@ export const miPartido = {
   repos: [] as const,
 } as const;
 
-export const projects = [idNight, miPartido] as const;
+export const projects = [idNight, luppi, miPartido] as const;
+
