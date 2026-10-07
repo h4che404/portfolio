@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { profile } from "@/content/profile";
 
 export function Hero() {
@@ -9,78 +10,139 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden border-b border-border pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
-      {/* Subtle warm ambient gradient */}
+      {/* Subtle warm & purple ambient background glows */}
       <div
-        className="pointer-events-none absolute -top-40 right-1/2 h-96 w-96 translate-x-1/2 rounded-full bg-accent/5 blur-[120px] sm:h-[450px] sm:w-[450px]"
+        className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-accent/5 blur-[120px] sm:h-[450px] sm:w-[450px]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute top-12 right-0 h-[400px] w-[400px] rounded-full bg-purple-600/10 blur-[130px] sm:h-[500px] sm:w-[500px]"
         aria-hidden="true"
       />
 
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:px-6 lg:px-8">
-        {/* Availability Badge */}
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-xs text-muted shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>{profile.location}</span>
-            <span className="text-border-strong">·</span>
-            <span className="text-foreground font-medium">
-              {profile.availability}
-            </span>
-          </div>
-        </div>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
+        {/* Main 2-column hero grid */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Left Column: Copy & Actions */}
+          <div className="flex flex-col gap-6 lg:col-span-7">
+            {/* Availability Badge */}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-xs text-muted shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>{profile.location}</span>
+                <span className="text-border-strong">·</span>
+                <span className="text-foreground font-medium">
+                  {profile.availability}
+                </span>
+              </div>
+            </div>
 
-        {/* Main Headline (Mobile-first sizing with clamp) */}
-        <div className="flex flex-col gap-4">
-          <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.08]">
-            Diseño y desarrollo{" "}
-            <span className="text-accent underline decoration-accent/40 decoration-wavy decoration-2 underline-offset-6">
-              productos digitales completos
-            </span>{" "}
-            para tu negocio.
-          </h1>
+            {/* Main Headline */}
+            <div className="flex flex-col gap-4">
+              <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[3.75rem] leading-[1.1]">
+                Diseño y desarrollo{" "}
+                <span className="text-accent">
+                  productos digitales completos
+                </span>{" "}
+                para tu negocio.
+              </h1>
 
-          <p className="max-w-2xl text-base text-muted sm:text-lg sm:leading-relaxed">
-            {profile.subheadline}
-          </p>
-        </div>
+              <p className="max-w-2xl text-base text-muted sm:text-lg sm:leading-relaxed">
+                {profile.subheadline}
+              </p>
+            </div>
 
-        {/* Primary Call-to-actions (Mobile: stacked full width; Desktop: row) */}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-2">
-          <a
-            href="#contacto"
-            className="flex min-h-[48px] items-center justify-center rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-md transition-all hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Contame tu proyecto
-          </a>
-
-          {whatsappUrl && (
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-6 py-3 text-center text-sm font-medium text-foreground transition-all hover:border-emerald-500/50 hover:bg-surface-raised active:scale-[0.98]"
-            >
-              <svg
-                className="h-4 w-4 text-emerald-400"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
+            {/* Primary Call-to-actions */}
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-2">
+              <a
+                href="#contacto"
+                className="flex min-h-[48px] items-center justify-center rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-md transition-all hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98]"
               >
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-              </svg>
-              <span>Consultar por WhatsApp</span>
-            </a>
-          )}
+                Contame tu proyecto
+              </a>
 
-          <a
-            href="#proyectos"
-            className="flex min-h-[48px] items-center justify-center rounded-lg border border-border px-5 py-3 text-center text-sm font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
-          >
-            Ver proyectos realizados ↓
-          </a>
+              {whatsappUrl && (
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-6 py-3 text-center text-sm font-medium text-foreground transition-all hover:border-emerald-500/50 hover:bg-surface-raised active:scale-[0.98]"
+                >
+                  <svg
+                    className="h-4 w-4 text-emerald-400"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                  <span>Consultar por WhatsApp</span>
+                </a>
+              )}
+
+              <a
+                href="#proyectos"
+                className="flex min-h-[48px] items-center justify-center rounded-lg border border-border px-5 py-3 text-center text-sm font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
+              >
+                Ver proyectos realizados ↓
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Visual Portrait Showcase */}
+          <div className="flex justify-center lg:col-span-5 lg:justify-end">
+            <div className="relative mx-auto flex w-full max-w-[320px] items-center justify-center sm:max-w-[380px] lg:max-w-[420px]">
+              {/* Diffuse aura glow (purple, sky blue & orange accent) */}
+              <div
+                className="pointer-events-none absolute -inset-6 rounded-full bg-gradient-to-tr from-purple-600/30 via-sky-500/20 to-accent/25 blur-3xl"
+                aria-hidden="true"
+              />
+
+              {/* Decorative circular halo container */}
+              <div className="relative flex items-center justify-center">
+                {/* Outer orbital halo ring */}
+                <div
+                  className="relative flex h-72 w-72 items-center justify-center rounded-full border border-purple-500/30 bg-gradient-to-b from-purple-500/10 via-transparent to-transparent p-3.5 shadow-[0_0_60px_-15px_rgba(147,51,234,0.35)] sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+                  aria-hidden="true"
+                >
+                  {/* Secondary inner ring */}
+                  <div className="h-full w-full rounded-full border border-accent/20" />
+                </div>
+
+                {/* Photo container */}
+                <div className="absolute h-64 w-64 overflow-hidden rounded-full border-2 border-purple-500/40 bg-black shadow-2xl sm:h-72 sm:w-72 lg:h-84 lg:w-84">
+                  <Image
+                    src="/profile.jpg"
+                    alt={profile.name}
+                    width={400}
+                    height={400}
+                    priority
+                    className="h-full w-full object-cover object-top"
+                  />
+                  {/* Subtle bottom fade to blend base seamlessly */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                </div>
+
+                {/* Floating decorative cyber accents */}
+                <span
+                  className="pointer-events-none absolute -left-3 top-10 select-none font-mono text-2xl font-bold text-purple-400/30 sm:-left-5 sm:text-3xl"
+                  aria-hidden="true"
+                >
+                  &lt;
+                </span>
+                <span
+                  className="pointer-events-none absolute -right-3 bottom-10 select-none font-mono text-2xl font-bold text-accent/30 sm:-right-5 sm:text-3xl"
+                  aria-hidden="true"
+                >
+                  /&gt;
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Value pillars ribbon */}
