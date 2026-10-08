@@ -11,7 +11,7 @@ export function Hero() {
     : null;
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
+    <section className="relative overflow-hidden pt-4 pb-14 sm:pt-6 sm:pb-20 lg:pt-8 lg:pb-24">
       {/* Subtle warm & purple ambient background glows */}
       <div
         className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full bg-accent/5 blur-[120px] sm:h-[450px] sm:w-[450px]"
@@ -22,13 +22,13 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 sm:gap-10 lg:gap-12 px-4 sm:px-6 lg:px-8">
         {/* Main 2-column hero grid */}
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
           {/* Left Column: Copy & Actions */}
-          <div className="flex flex-col gap-6 lg:col-span-7">
+          <div className="flex flex-col gap-4 sm:gap-5 lg:col-span-7">
             {/* Availability & Role Badges */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-accent shadow-sm">
                 Software Developer · Full Stack
               </span>
@@ -43,7 +43,7 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-3.5">
               <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[3.75rem] leading-[1.1]">
                 Construyo software y{" "}
                 <span className="text-accent">
