@@ -22,11 +22,14 @@ export function SiteFooter() {
             aria-label="Enlaces del pie de página"
             className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs"
           >
-            <a href="#ingenieria" className="hover:text-foreground transition-colors">
-              Ingeniería
+            <a href="#" className="hover:text-foreground transition-colors">
+              Inicio
             </a>
             <a href="#proyectos" className="hover:text-foreground transition-colors">
               Proyectos
+            </a>
+            <a href="#capacidades" className="hover:text-foreground transition-colors">
+              Capacidades
             </a>
             <a href="#proceso" className="hover:text-foreground transition-colors">
               Cómo trabajo

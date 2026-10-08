@@ -145,37 +145,37 @@ export function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col gap-2.5 pt-2 sm:flex-row sm:items-center">
-                <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center">
-                  <a
-                    href={idNight.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
-                  >
-                    <span>Visitar sitio</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-
-                  <Link
-                    href={`/proyectos/${idNight.slug}`}
-                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
-                  >
-                    <span>Caso técnico</span>
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-
+              <div className="flex items-center gap-2.5 pt-2">
                 <a
-                  href={idNight.repos[0]?.url}
+                  href={idNight.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex min-h-[44px] items-center justify-center rounded-lg border border-border px-3.5 py-2.5 font-mono text-xs text-muted transition-colors hover:border-border-strong hover:text-foreground"
-                  aria-label="Ver repositorios en GitHub"
+                  className="flex min-h-[44px] flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
                 >
-                  <span>Repos</span>
+                  <span>Visitar sitio</span>
                   <span aria-hidden="true">↗</span>
                 </a>
+
+                <Link
+                  href={`/proyectos/${idNight.slug}`}
+                  className="flex min-h-[44px] flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+                >
+                  <span>Caso técnico</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+
+                {idNight.repos[0]?.url && (
+                  <a
+                    href={idNight.repos[0].url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-colors hover:border-border-strong hover:text-foreground shrink-0"
+                    title="Ver repositorio en GitHub"
+                    aria-label="Ver repositorio de ID-Night en GitHub"
+                  >
+                    <TechIcon name="github" size={16} />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -297,37 +297,37 @@ export function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col gap-2.5 pt-2 sm:flex-row sm:items-center">
-                <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center">
-                  <a
-                    href={luppi.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
-                  >
-                    <span>Panel en vivo</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-
-                  <Link
-                    href={`/proyectos/${luppi.slug}`}
-                    className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
-                  >
-                    <span>Caso técnico</span>
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-
+              <div className="flex items-center gap-2.5 pt-2">
                 <a
-                  href={luppi.repos[0]?.url}
+                  href={luppi.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex min-h-[44px] items-center justify-center rounded-lg border border-border px-3.5 py-2.5 font-mono text-xs text-muted transition-colors hover:border-border-strong hover:text-foreground"
-                  aria-label="Ver repositorio en GitHub"
+                  className="flex min-h-[44px] flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
                 >
-                  <span>Monorepo</span>
+                  <span>Panel en vivo</span>
                   <span aria-hidden="true">↗</span>
                 </a>
+
+                <Link
+                  href={`/proyectos/${luppi.slug}`}
+                  className="flex min-h-[44px] flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+                >
+                  <span>Caso técnico</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+
+                {luppi.repos[0]?.url && (
+                  <a
+                    href={luppi.repos[0].url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface text-muted transition-colors hover:border-border-strong hover:text-foreground shrink-0"
+                    title="Ver repositorio en GitHub"
+                    aria-label="Ver repositorio de Luppi en GitHub"
+                  >
+                    <TechIcon name="github" size={16} />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -444,12 +444,12 @@ export function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center pt-2">
+              <div className="flex items-center gap-2.5 pt-2">
                 <a
                   href={miPartido.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
+                  className="flex min-h-[44px] flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-lg bg-accent px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-accent-foreground shadow-sm transition-all hover:bg-accent-hover active:scale-[0.98]"
                 >
                   <span>Visitar sitio</span>
                   <span aria-hidden="true">↗</span>
@@ -457,7 +457,7 @@ export function Projects() {
 
                 <Link
                   href={`/proyectos/${miPartido.slug}`}
-                  className="flex min-h-[44px] sm:min-w-[130px] items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-3 sm:px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
+                  className="flex min-h-[44px] flex-1 sm:flex-none items-center justify-center gap-1.5 sm:gap-2 rounded-lg border border-border-strong bg-surface-raised px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
                 >
                   <span>Detalle técnico</span>
                   <span aria-hidden="true">→</span>

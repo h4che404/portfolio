@@ -3,8 +3,9 @@ import { services } from "@/content/services";
 export function Services() {
   return (
     <section id="ingenieria" className="relative overflow-hidden py-16 sm:py-24">
-      {/* Anchor alias for backwards compatibility */}
+      {/* Anchor aliases for backwards compatibility */}
       <span id="servicios" className="sr-only" aria-hidden="true" />
+      <span id="capacidades" className="sr-only" aria-hidden="true" />
 
       {/* Ambient subtle purple light */}
       <div
@@ -78,22 +79,14 @@ export function Services() {
                 </div>
               </div>
 
-              {/* Bottom footer: Ideal for + CTA */}
-              <div className="mt-6 pt-5 border-t border-border flex flex-col gap-4">
-                <p className="text-xs text-muted">
-                  <span className="font-semibold text-foreground/80">
+              {/* Bottom footer: Ideal for */}
+              <div className="mt-6 pt-5 border-t border-border flex flex-col">
+                <p className="text-xs text-muted leading-relaxed">
+                  <span className="font-semibold text-foreground/85">
                     Aplicación clave:{" "}
                   </span>
                   {service.idealFor}
                 </p>
-
-                <a
-                  href="#proyectos"
-                  className="inline-flex min-h-[44px] items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent transition-colors hover:text-accent-hover group-hover:underline underline-offset-4"
-                >
-                  <span>Ver aplicación en proyectos</span>
-                  <span aria-hidden="true">↓</span>
-                </a>
               </div>
             </article>
           ))}

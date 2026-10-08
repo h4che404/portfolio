@@ -130,70 +130,49 @@ export function ContactForm() {
         </div>
       </div>
 
-      {/* Row 2: Tipo de proyecto y Presupuesto */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="contact-project-type"
-            className="text-xs font-semibold uppercase tracking-wider text-foreground/90"
+      {/* Row 2: Tipo de consulta / Proyecto */}
+      <div className="flex flex-col gap-1.5">
+        <label
+          htmlFor="contact-project-type"
+          className="text-xs font-semibold uppercase tracking-wider text-foreground/90"
+        >
+          Motivo o tipo de consulta <span className="text-accent">*</span>
+        </label>
+        <select
+          id="contact-project-type"
+          name="projectType"
+          required
+          defaultValue="Sistema a medida"
+          aria-describedby={
+            state.errors?.projectType ? "project-type-error" : undefined
+          }
+          className="min-h-[44px] w-full rounded-lg border border-border bg-surface-raised px-3.5 py-2.5 text-base text-foreground transition-colors focus:border-accent focus:outline-none"
+        >
+          <option value="Sistema a medida">
+            Sistema a medida / Plataforma web
+          </option>
+          <option value="Web o Landing page">
+            Sitio web o Landing page de alto impacto
+          </option>
+          <option value="App móvil">
+            Aplicación móvil (Android / iOS)
+          </option>
+          <option value="Inteligencia Artificial">
+            Integración con Inteligencia Artificial / Visión
+          </option>
+          <option value="Propuesta laboral">
+            Propuesta laboral / Búsqueda para empresa
+          </option>
+          <option value="Otro">Otro tipo de consulta</option>
+        </select>
+        {state.errors?.projectType && (
+          <p
+            id="project-type-error"
+            className="text-xs font-medium text-rose-400"
           >
-            Tipo de proyecto <span className="text-accent">*</span>
-          </label>
-          <select
-            id="contact-project-type"
-            name="projectType"
-            required
-            defaultValue="Web o Landing page"
-            aria-describedby={
-              state.errors?.projectType ? "project-type-error" : undefined
-            }
-            className="min-h-[44px] w-full rounded-lg border border-border bg-surface-raised px-3.5 py-2.5 text-base text-foreground transition-colors focus:border-accent focus:outline-none"
-          >
-            <option value="Web o Landing page">
-              Web o Landing page de alto impacto
-            </option>
-            <option value="Sistema a medida">
-              Sistema a medida / Panel de gestión
-            </option>
-            <option value="App móvil">
-              Aplicación móvil (Android / iOS)
-            </option>
-            <option value="Inteligencia Artificial">
-              Integración con Inteligencia Artificial
-            </option>
-            <option value="Otro">Otro tipo de consulta</option>
-          </select>
-          {state.errors?.projectType && (
-            <p
-              id="project-type-error"
-              className="text-xs font-medium text-rose-400"
-            >
-              {state.errors.projectType}
-            </p>
-          )}
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="contact-budget"
-            className="text-xs font-semibold uppercase tracking-wider text-muted"
-          >
-            Presupuesto estimado (opcional)
-          </label>
-          <select
-            id="contact-budget"
-            name="budget"
-            defaultValue="A definir / Conversable"
-            className="min-h-[44px] w-full rounded-lg border border-border bg-surface-raised px-3.5 py-2.5 text-base text-foreground transition-colors focus:border-accent focus:outline-none"
-          >
-            <option value="A definir / Conversable">
-              A definir / Conversable
-            </option>
-            <option value="Menos de $1.000 USD">Menos de $1.000 USD</option>
-            <option value="$1.000 a $3.000 USD">$1.000 a $3.000 USD</option>
-            <option value="Más de $3.000 USD">Más de $3.000 USD</option>
-          </select>
-        </div>
+            {state.errors.projectType}
+          </p>
+        )}
       </div>
 
       {/* Row 3: Mensaje */}

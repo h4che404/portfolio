@@ -1,15 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { profile } from "@/content/profile";
-import { TechIcon } from "@/components/ui/tech-icons";
 
 export function Hero() {
-  const whatsappUrl = profile.whatsapp
-    ? `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(
-        profile.whatsappMessage
-      )}`
-    : null;
-
   return (
     <section className="relative overflow-hidden pt-4 pb-14 sm:pt-6 sm:pb-20 lg:pt-8 lg:pb-24">
       {/* Subtle warm & purple ambient background glows */}
@@ -60,80 +52,20 @@ export function Hero() {
             {/* Primary Call-to-actions */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center pt-2">
               <a
-                href="#proyectos"
-                className="flex min-h-[48px] items-center justify-center rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-md transition-all hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98]"
+                href="#contacto"
+                className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-md transition-all hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98]"
               >
-                Ver proyectos y arquitectura
-              </a>
-
-              <Link
-                href="/cv"
-                className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-5 py-3 text-center text-sm font-medium text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
-              >
-                <span>Currículum (CV)</span>
+                <span>Contame tu proyecto</span>
                 <span aria-hidden="true">→</span>
-              </Link>
-
-              {whatsappUrl && (
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-6 py-3 text-center text-sm font-medium text-foreground transition-all hover:border-emerald-500/50 hover:bg-surface-raised active:scale-[0.98]"
-                >
-                  <svg
-                    className="h-4 w-4 text-emerald-400"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                  </svg>
-                  <span>Consultar por WhatsApp</span>
-                </a>
-              )}
+              </a>
 
               <a
-                href="#contacto"
-                className="flex min-h-[48px] items-center justify-center rounded-lg border border-border px-5 py-3 text-center text-sm font-medium text-muted transition-colors hover:border-border-strong hover:text-foreground"
+                href="#proyectos"
+                className="flex min-h-[48px] items-center justify-center gap-2 rounded-lg border border-border-strong bg-surface px-6 py-3 text-center text-sm font-medium text-foreground transition-all hover:border-accent hover:text-accent active:scale-[0.98]"
               >
-                Contactar ↓
+                <span>Ver proyectos</span>
+                <span aria-hidden="true">↓</span>
               </a>
-            </div>
-
-            {/* Tech Stack quick strip */}
-            <div className="flex flex-col gap-2.5 pt-3">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">
-                Tecnologías y herramientas
-              </span>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-                {[
-                  { name: "Next.js", icon: "nextjs", hover: "hover:text-foreground" },
-                  { name: "React", icon: "react", hover: "hover:text-cyan-400" },
-                  { name: "TypeScript", icon: "typescript", hover: "hover:text-blue-400" },
-                  { name: "Tailwind", icon: "tailwind", hover: "hover:text-teal-400" },
-                  { name: ".NET", icon: "dotnet", hover: "hover:text-purple-400" },
-                  { name: "Java", icon: "java", hover: "hover:text-amber-500" },
-                  { name: "Node.js", icon: "nodejs", hover: "hover:text-emerald-400" },
-                  { name: "Python", icon: "python", hover: "hover:text-amber-400" },
-                  { name: "PostgreSQL", icon: "postgres", hover: "hover:text-sky-400" },
-                  { name: "Docker", icon: "docker", hover: "hover:text-blue-400" },
-                  { name: "Kotlin", icon: "kotlin", hover: "hover:text-violet-400" },
-                ].map((t) => (
-                  <div
-                    key={t.name}
-                    title={t.name}
-                    className={`flex items-center gap-1.5 rounded-lg border border-border/70 bg-surface/70 px-2.5 py-1 text-xs text-muted transition-all duration-200 ${t.hover} hover:border-border-strong hover:bg-surface-raised`}
-                  >
-                    <TechIcon name={t.icon} size={14} />
-                    <span className="text-[11px] font-medium">{t.name}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
