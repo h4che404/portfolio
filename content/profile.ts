@@ -58,42 +58,42 @@ export const productEvolution = [
 // Leaving it empty simply hides the section.
 export const education = [
   {
-    title: "Tecnicatura Universitaria en Programación",
-    place: "Universidad Tecnológica Nacional (UTN)",
-    period: "En curso — 4 materias para finalizar",
+    title: "Tecnicatura Universitaria en Programación (TUP)",
+    place: "Universidad Tecnológica Nacional (UTN) — Facultad Regional Mendoza",
+    period: "2023 – Actualidad (En curso — 4 materias para finalizar)",
     detail:
-      "Programación orientada a objetos, bases de datos, arquitectura de software, análisis de sistemas, UML, estadística, metodologías ágiles y testing.",
+      "Formación académica en ingeniería de software: Programación Orientada a Objetos (POO), Algoritmos y Estructuras de Datos, Arquitectura de Software, Clean Architecture y Patrones de Diseño (SOLID), Modelado y Gestión de Bases de Datos Relacionales (SQL), Análisis y Diseño de Sistemas con UML, Metodologías Ágiles (Scrum), Testing y Verificación de Software, Matemática y Estadística aplicada.",
   },
 ] as const;
 
 export const experience = [
   {
-    role: "Software Developer — proyectos propios",
+    role: "Software Developer — Proyectos propios en producción",
     org: "ID-Night · Luppi · Mi Partido",
-    period: "2024 – presente",
+    period: "2024 – Presente",
     bullets: [
-      "Diseño e implementación de backends en .NET 10 (Clean Architecture) y Fastify (Node.js) con PostgreSQL, Drizzle ORM y EF Core: autenticación, roles, auditoría, multi-tenancy e integraciones externas.",
-      "Desarrollo de un microservicio de biometría facial en Python/FastAPI con OpenCV, YuNet y SFace sobre ONNX, con comparación 1:1 por embeddings.",
-      "Frontends en Next.js y React 19, PWA offline-first con Workbox y aplicaciones móviles en Kotlin Multiplatform con target Android e iOS.",
-      "Despliegue y operación sobre Azure (App Service, Container Apps, Container Registry), Docker, Vercel y GitHub Actions.",
-      "Testing unitario, de integración y de APIs con Postman y Swagger/OpenAPI; debugging, logs y validación de datos.",
+      "Diseño e implementación de backends distribuidos en .NET 10 (Clean Architecture) y Fastify (Node.js) con PostgreSQL, Drizzle ORM y EF Core: autenticación JWT, roles granulares, auditoría, multi-tenancy y contratos tipados.",
+      "Desarrollo e integración de microservicio de visión computacional en Python/FastAPI con OpenCV, YuNet y SFace sobre ONNX Runtime para biometría facial 1:1 en submilisegundos.",
+      "Construcción de interfaces web interactivas con Next.js (App Router, Server Actions, SSR) y React 19, aplicaciones PWA offline-first con Workbox y apps móviles en Kotlin Multiplatform para Android e iOS.",
+      "Infraestructura contenerizada con Docker y despliegues en Microsoft Azure (Container Apps, App Service) y Vercel, automatizados con pipelines de CI/CD en GitHub Actions.",
+      "Diseño de APIs RESTful documentadas con Swagger/OpenAPI, testing unitario y de integración, observabilidad y validación estricta de esquemas de datos.",
     ],
   },
   {
-    role: "Atención al cliente, ventas y gestión",
+    role: "Atención al cliente, ventas y gestión comercial",
     org: "Negocio familiar",
     period: "2021 – 2025",
     bullets: [
-      "Asesoramiento y venta directa, detección de necesidades y manejo de objeciones.",
-      "Resolución de consultas y situaciones conflictivas con foco en la retención del cliente.",
+      "Venta directa, detección de necesidades de clientes, administración operativa y resolución de situaciones complejas.",
+      "Desarrollo de habilidades de comunicación interpersonal, empatía, organización del tiempo y trabajo orientado a resultados.",
     ],
   },
   {
-    role: "Atención al cliente y ventas",
+    role: "Atención telefónica y resolución de casos",
     org: "Call center",
     period: "2026",
     bullets: [
-      "Atención telefónica bajo objetivos de calidad y volumen, con seguimiento y registro de casos.",
+      "Gestión de requerimientos bajo métricas de calidad y volumen, seguimiento metódico de incidentes y registro riguroso de información.",
     ],
   },
 ] as const;
