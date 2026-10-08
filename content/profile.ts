@@ -25,6 +25,8 @@ export const profile = {
     "Hola Juan Cruz, vi tu portfolio y me gustaría conversar sobre una oportunidad / proyecto.",
   github: "https://github.com/h4che404",
   githubHandle: "h4che404",
+  linkedin: "https://www.linkedin.com/in/juan-cruz-elias-martin-a9398220b/",
+  linkedinHandle: "juan-cruz-elias-martin-a9398220b",
 } as const;
 
 export const productEvolution = [
@@ -195,12 +197,12 @@ export const cvProfile = {
   location: profile.location,
   email: profile.email,
   phone: "+54 9 263 461-6717",
-  portfolioLabel: "portfolio web",
+  portfolioLabel: "portfolio-liard-two-ntjfmwxolk.vercel.app",
   portfolioUrl: "https://portfolio-liard-two-ntjfmwxolk.vercel.app",
   githubLabel: "github.com/h4che404",
   githubUrl: profile.github,
-  linkedinLabel: "linkedin.com/in/juancruzelias",
-  linkedinUrl: "https://linkedin.com/in/juancruzelias",
+  linkedinLabel: "linkedin.com/in/juan-cruz-elias-martin-a9398220b",
+  linkedinUrl: "https://www.linkedin.com/in/juan-cruz-elias-martin-a9398220b/",
   summary:
     "Estudiante avanzado de Programación en la UTN enfocado en el desarrollo de productos de software de punta a punta. Experiencia práctica demostrable en arquitectura backend (.NET, Spring Boot, Fastify), persistencia relacional (PostgreSQL), mobile multiplataforma (Kotlin Multiplatform) e integración de IA aplicada (Python/ONNX). Perfil con autonomía técnica y foco en llevar sistemas reales a producción.",
 } as const;

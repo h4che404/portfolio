@@ -83,6 +83,29 @@ export function Contact() {
               </p>
             </div>
 
+            {/* LinkedIn Card */}
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col gap-2 rounded-2xl border border-border bg-surface p-6 sm:p-7 transition-all hover:border-sky-500/50 hover:bg-surface-raised"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs uppercase tracking-wider text-sky-400 font-semibold">
+                  Perfil profesional
+                </span>
+                <span className="font-mono text-xs text-muted group-hover:text-sky-400 group-hover:translate-x-0.5 transition-all">
+                  Ver perfil →
+                </span>
+              </div>
+              <h3 className="text-lg font-bold text-foreground group-hover:text-sky-300 transition-colors">
+                LinkedIn
+              </h3>
+              <p className="text-xs text-muted leading-relaxed">
+                Conectemos para propuestas laborales, búsquedas de talento o networking técnico.
+              </p>
+            </a>
+
             {/* Location & Commitment */}
             <div className="flex flex-col gap-3 rounded-2xl border border-border/60 bg-surface/50 p-6 sm:p-7">
               <div className="flex items-center gap-2 text-xs font-mono text-muted">

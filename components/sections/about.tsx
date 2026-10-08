@@ -169,9 +169,19 @@ export function About() {
                 href="/cv"
                 className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-surface border border-border-strong px-5 py-3 text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-accent hover:text-accent"
               >
-                <span>Ver currículum completo (CV)</span>
+                <span>Ver currículum (CV)</span>
                 <span aria-hidden="true">→</span>
               </Link>
+
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 text-xs font-mono text-muted transition-colors hover:border-sky-500/50 hover:text-sky-400"
+              >
+                <span>LinkedIn</span>
+                <span aria-hidden="true">↗</span>
+              </a>
 
               <a
                 href={profile.github}

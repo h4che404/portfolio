@@ -59,6 +59,15 @@ export function SiteFooter() {
             </a>
             <span>·</span>
             <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground transition-colors font-mono"
+            >
+              linkedin.com/in/{profile.linkedinHandle}
+            </a>
+            <span>·</span>
+            <a
               href={`mailto:${profile.email}`}
               className="hover:text-foreground transition-colors"
             >
