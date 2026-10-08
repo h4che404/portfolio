@@ -50,68 +50,62 @@ export default function CvPage() {
       {/* Main CV Sheet (Strictly 1 A4 Page) */}
       <article className="mx-auto flex w-full max-w-[800px] flex-col bg-white px-7 py-7 sm:px-9 sm:py-8 font-sans text-neutral-900 shadow-md print:m-0 print:w-full print:max-w-none print:p-0 print:shadow-none">
         {/* Header */}
-        <header className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-          <div className="flex flex-col">
-            <h1 className="text-2xl sm:text-[29px] font-bold tracking-tight text-neutral-950 leading-tight">
+        <header className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 print:flex-row print:items-start print:justify-between">
+          <div className="flex flex-col min-w-0">
+            <h1 className="text-2xl sm:text-[28px] font-bold tracking-tight text-neutral-950 leading-tight md:whitespace-nowrap print:whitespace-nowrap">
               {cvProfile.name}
             </h1>
-            <p className="mt-0.5 text-[12px] sm:text-[13px] text-neutral-600 font-normal">
+            <p className="mt-0.5 text-[12px] sm:text-[12.5px] text-neutral-600 font-normal">
               {cvProfile.roleSubtitle}
             </p>
           </div>
 
-          {/* Contact & Professional Links (Text-first for ATS & human readability) */}
-          <div className="flex flex-col gap-1 text-[11px] text-neutral-700 shrink-0 sm:items-end font-sans">
-            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 sm:justify-end">
-              <span className="text-neutral-500 font-medium">Ubicación:</span>
-              <span className="text-neutral-900 font-semibold">{cvProfile.location}</span>
-              <span className="text-neutral-300 hidden sm:inline">·</span>
-              <span className="text-neutral-500 font-medium">Teléfono:</span>
+          {/* Contact & Professional Links (Clean hyperlinks) */}
+          <div className="flex flex-col gap-1 text-[11px] text-neutral-700 shrink-0 md:items-end print:items-end font-sans">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 md:justify-end print:justify-end">
+              <span>{cvProfile.location}</span>
+              <span className="text-neutral-300">·</span>
               <a
                 href={`tel:${cvProfile.phone.replace(/[^0-9+]/g, "")}`}
-                className="font-semibold text-neutral-900 transition-colors hover:text-neutral-950"
+                className="text-neutral-800 transition-colors hover:text-neutral-950 hover:underline"
               >
                 {cvProfile.phone}
               </a>
-              <span className="text-neutral-300 hidden sm:inline">·</span>
-              <span className="text-neutral-500 font-medium">Correo:</span>
+              <span className="text-neutral-300">·</span>
               <a
                 href={`mailto:${cvProfile.email}`}
-                className="font-semibold text-neutral-900 transition-colors hover:text-neutral-950 underline underline-offset-2"
+                className="text-neutral-800 transition-colors hover:text-neutral-950 hover:underline"
               >
                 {cvProfile.email}
               </a>
             </div>
 
-            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 sm:justify-end text-[10.5px]">
-              <span className="text-neutral-500 font-medium">Portfolio:</span>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 md:justify-end print:justify-end text-[11px]">
               <a
                 href={cvProfile.portfolioUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-neutral-900 transition-colors hover:text-neutral-950 underline underline-offset-2"
+                className="font-medium text-neutral-900 underline underline-offset-2 transition-colors hover:text-neutral-950"
               >
-                {cvProfile.portfolioLabel}
+                Portfolio
               </a>
-              <span className="text-neutral-300 hidden sm:inline">·</span>
-              <span className="text-neutral-500 font-medium">LinkedIn:</span>
+              <span className="text-neutral-300">·</span>
               <a
                 href={cvProfile.linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-neutral-900 transition-colors hover:text-neutral-950 underline underline-offset-2"
+                className="font-medium text-neutral-900 underline underline-offset-2 transition-colors hover:text-neutral-950"
               >
-                {cvProfile.linkedinLabel}
+                LinkedIn
               </a>
-              <span className="text-neutral-300 hidden sm:inline">·</span>
-              <span className="text-neutral-500 font-medium">GitHub:</span>
+              <span className="text-neutral-300">·</span>
               <a
                 href={cvProfile.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-neutral-900 transition-colors hover:text-neutral-950 underline underline-offset-2"
+                className="font-medium text-neutral-900 underline underline-offset-2 transition-colors hover:text-neutral-950"
               >
-                {cvProfile.githubLabel}
+                GitHub
               </a>
             </div>
           </div>
