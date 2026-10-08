@@ -2,243 +2,217 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PrintButton } from "@/components/cv/print-button";
 import {
-  education,
-  experience,
-  languages,
-  profile,
-  skills,
+  cvAchievements,
+  cvEducation,
+  cvExperiences,
+  cvLanguages,
+  cvProfile,
+  cvSkills,
 } from "@/content/profile";
-import { idNight, luppi, miPartido } from "@/content/projects";
 
 export const metadata: Metadata = {
-  title: `CV — ${profile.name} · Estudiante de Programación (UTN)`,
-  description: `Currículum Vitae de ${profile.name}, Estudiante Avanzado de la Tecnicatura Universitaria en Programación (UTN) y Software Developer.`,
+  title: `CV — ${cvProfile.name} · Software Developer`,
+  description: `Currículum Vitae de ${cvProfile.name}, Software Developer y Estudiante Avanzado de Programación (UTN).`,
 };
 
-function Heading({ children }: { children: string }) {
+function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="border-b border-neutral-300 pb-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-neutral-600 font-bold">
+    <h2 className="text-[11px] font-bold uppercase tracking-wider text-neutral-950">
       {children}
     </h2>
   );
 }
 
-function EntryHeader({
-  title,
-  meta,
-  badge,
-}: {
-  title: string;
-  meta: string;
-  badge?: string;
-}) {
+function HorizontalDivider() {
+  return <hr className="border-t border-neutral-300 my-2.5 print:my-2" />;
+}
+
+function ContactBadge({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-wrap items-baseline justify-between gap-2">
-      <div className="flex items-center gap-2">
-        <h3 className="text-[14px] font-semibold text-neutral-900">{title}</h3>
-        {badge && (
-          <span className="rounded bg-neutral-100 border border-neutral-300 px-1.5 py-0.2 font-mono text-[10px] text-neutral-700">
-            {badge}
-          </span>
-        )}
-      </div>
-      <span className="font-mono text-[11px] text-neutral-500">{meta}</span>
-    </div>
+    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-[3px] bg-neutral-800 text-white">
+      {children}
+    </span>
   );
 }
 
 export default function CvPage() {
   return (
-    <main className="min-h-screen bg-neutral-100 py-8 print:bg-white print:py-0">
-      {/* Screen action bar */}
-      <div className="mx-auto mb-5 flex w-full max-w-[794px] items-center justify-between px-6 print:hidden">
+    <main className="min-h-screen bg-neutral-100 py-6 print:bg-white print:py-0">
+      {/* Screen action bar (hidden in print) */}
+      <div className="mx-auto mb-4 flex w-full max-w-[800px] items-center justify-between px-6 print:hidden">
         <Link
           href="/"
-          className="font-mono text-xs text-neutral-600 transition-colors hover:text-neutral-900"
+          className="font-mono text-xs text-neutral-600 transition-colors hover:text-neutral-950"
         >
           ← Volver al portfolio
         </Link>
         <div className="flex items-center gap-3">
           <span className="text-xs text-neutral-500 font-mono hidden sm:inline">
-            Formato A4 optimizado para impresión
+            Formato A4 (1 carilla)
           </span>
           <PrintButton />
         </div>
       </div>
 
-      {/* Main CV Sheet (A4 Dimensions 794px @ 96DPI) */}
-      <article className="mx-auto flex w-full max-w-[794px] flex-col gap-6 bg-white px-10 py-12 font-sans text-neutral-900 shadow-sm print:max-w-none print:px-0 print:py-0 print:shadow-none">
+      {/* Main CV Sheet (Strictly 1 A4 Page) */}
+      <article className="mx-auto flex w-full max-w-[800px] flex-col bg-white px-7 py-7 sm:px-9 sm:py-8 font-sans text-neutral-900 shadow-md print:m-0 print:w-full print:max-w-none print:p-0 print:shadow-none">
         {/* Header */}
-        <header className="flex flex-col gap-2 border-b border-neutral-200 pb-5">
-          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-950">
-              {profile.name}
+        <header className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+          <div className="flex flex-col">
+            <h1 className="text-2xl sm:text-[29px] font-bold tracking-tight text-neutral-950 leading-tight">
+              {cvProfile.name}
             </h1>
-            <span className="font-mono text-xs text-neutral-600">
-              {profile.location}
-            </span>
+            <p className="mt-0.5 text-[12px] sm:text-[13px] text-neutral-600 font-normal">
+              {cvProfile.roleSubtitle}
+            </p>
           </div>
 
-          <p className="text-[14px] font-medium text-neutral-700">
-            Estudiante Avanzado de Programación (UTN) · Software Developer
-          </p>
+          {/* Contact & Social Links */}
+          <div className="flex flex-col gap-1.5 text-[11px] text-neutral-700 shrink-0 sm:items-end">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 sm:justify-end">
+              <a
+                href={`mailto:${cvProfile.email}`}
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-950"
+              >
+                <ContactBadge>
+                  <svg
+                    className="h-2.5 w-2.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </ContactBadge>
+                <span>{cvProfile.email}</span>
+              </a>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px] text-neutral-600 pt-1">
-            <span>{profile.email}</span>
-            <span>·</span>
-            <span>+54 9 263 461-6717</span>
-            <span>·</span>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="text-neutral-800 underline underline-offset-2"
-            >
-              github.com/{profile.githubHandle}
-            </a>
-            <span>·</span>
-            <a
-              href="https://portfolio-liard-two-ntjfmwxolk.vercel.app"
-              target="_blank"
-              rel="noreferrer"
-              className="text-neutral-800 underline underline-offset-2"
-            >
-              portfolio web
-            </a>
+              <a
+                href={`tel:${cvProfile.phone.replace(/[^0-9+]/g, "")}`}
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-950"
+              >
+                <ContactBadge>
+                  <svg
+                    className="h-2.5 w-2.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                </ContactBadge>
+                <span>{cvProfile.phone}</span>
+              </a>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 sm:justify-end font-medium">
+              <a
+                href={cvProfile.portfolioUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-950 underline underline-offset-2"
+              >
+                <ContactBadge>
+                  <svg
+                    className="h-2.5 w-2.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                    />
+                  </svg>
+                </ContactBadge>
+                <span>Portfolio</span>
+              </a>
+
+              <a
+                href={cvProfile.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-950 underline underline-offset-2"
+              >
+                <ContactBadge>
+                  <svg
+                    className="h-2.5 w-2.5 fill-current"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </ContactBadge>
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href={cvProfile.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-950 underline underline-offset-2"
+              >
+                <ContactBadge>
+                  <svg
+                    className="h-2.5 w-2.5 fill-current"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </ContactBadge>
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
         </header>
 
-        {/* 1. Academic & Professional Summary */}
-        <section className="flex flex-col gap-2 print:break-inside-avoid">
-          <Heading>Perfil Académico & Profesional</Heading>
-          <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700 text-justify">
-            Estudiante avanzado de la Tecnicatura Universitaria en Programación
-            en la Universidad Tecnológica Nacional (UTN — Facultad Regional Mendoza),
-            a 4 materias de completar la carrera. Perfil enfocado en el diseño y
-            construcción de productos de software completos de punta a punta:
-            arquitectura backend (.NET 10, Java / Spring Boot, Fastify), persistencia
-            relacional (PostgreSQL), aplicaciones móviles multiplataforma (Kotlin
-            Multiplatform) e inteligencia artificial aplicada (Python / ONNX).
-            Experiencia práctica demostrada mediante el desarrollo e implementación
-            en producción de sistemas propios (ID-Night, Luppi y Mi Partido).
-            Cuento además con más de cuatro años de experiencia laboral previa en
-            atención al cliente y gestión comercial, aportando sólidas habilidades
-            interpersonales, resolución de problemas y trabajo en equipo. Busco
-            realizar mi Práctica Profesional Supervisada (PPS) o incorporarme a un
-            equipo de desarrollo de software donde aportar rigor técnico, buenas
-            prácticas y compromiso continuo de aprendizaje.
+        {/* Divider */}
+        <HorizontalDivider />
+
+        {/* 1. Perfil Profesional */}
+        <section className="flex flex-col gap-1 print:break-inside-avoid">
+          <SectionHeading>Perfil Profesional</SectionHeading>
+          <p className="text-[10.5px] leading-relaxed text-neutral-700 text-justify sm:text-left">
+            {cvProfile.summary}
           </p>
         </section>
 
-        {/* 2. Education */}
-        <section className="flex flex-col gap-2.5 print:break-inside-avoid">
-          <Heading>Educación / Formación Académica</Heading>
-          {education.map((item) => (
-            <div key={item.title} className="flex flex-col gap-1">
-              <EntryHeader title={item.title} meta={item.period} />
-              <p className="font-mono text-[11px] text-neutral-600 font-medium">
-                {item.place}
-              </p>
-              <p className="text-xs leading-relaxed text-neutral-700">
-                {item.detail}
-              </p>
-            </div>
-          ))}
-        </section>
+        {/* 2. Experiencia Profesional */}
+        <section className="flex flex-col gap-1.5 mt-2 print:break-inside-avoid">
+          <SectionHeading>Experiencia Profesional</SectionHeading>
 
-        {/* 3. Software Projects & Technical Experience */}
-        <section className="flex flex-col gap-4 print:break-inside-avoid">
-          <Heading>Proyectos de Software & Experiencia Técnica</Heading>
-
-          {/* Project 1: ID-Night */}
-          <div className="flex flex-col gap-1.5">
-            <EntryHeader
-              title={`${idNight.name} — Control de Acceso Biométrico con IA`}
-              meta="2024 – Presente"
-              badge="En desarrollo activo"
-            />
-            <p className="text-xs leading-relaxed text-neutral-700">
-              <span className="font-medium text-neutral-900">Arquitectura:</span>{" "}
-              Backend distribuido en .NET 10 (Clean Architecture), microservicio
-              independiente de visión computacional en Python/FastAPI con modelos
-              ONNX locales (YuNet y SFace) para validación biométrica 1:1 en
-              submilisegundos, consola operativa web en Next.js y credencial digital
-              PWA offline-first con QR rotativo dinámico.
-            </p>
-            <ul className="flex flex-col gap-1 pl-4 text-xs leading-relaxed text-neutral-700">
-              <li className="list-disc">
-                <span className="font-medium">Decisión arquitectónica:</span> Microservicio
-                facial desacoplado en FastAPI/ONNX para no bloquear el thread pool del backend
-                y permitir escalabilidad horizontal independiente.
-              </li>
-              <li className="list-disc">
-                <span className="font-medium">Seguridad & Datos:</span> Autenticación con
-                JWT/roles, persistencia en PostgreSQL con EF Core, auditoría de ingresos y
-                consentimiento explícito de datos biométricos.
-              </li>
-              <li className="list-disc">
-                <span className="font-medium">Despliegue:</span> Contenedores Docker
-                orquestados en Microsoft Azure (Container Apps).
-              </li>
-            </ul>
-          </div>
-
-          {/* Project 2: Luppi */}
-          <div className="flex flex-col gap-1.5">
-            <EntryHeader
-              title={`${luppi.name} — Plataforma SaaS de Comercio Digital`}
-              meta="2025 – Presente"
-              badge="Piloto comercial en marcha"
-            />
-            <p className="text-xs leading-relaxed text-neutral-700">
-              <span className="font-medium text-neutral-900">Arquitectura:</span>{" "}
-              Plataforma multitenant orientada a centros comerciales y comercios
-              barriales. Monorepo con Turborepo, backend en Fastify (Node.js) con
-              Drizzle ORM sobre PostgreSQL y aplicación PWA offline-first con
-              Workbox para puntos de venta comerciales (POS).
-            </p>
-            <ul className="flex flex-col gap-1 pl-4 text-xs leading-relaxed text-neutral-700">
-              <li className="list-disc">
-                <span className="font-medium">Monorepo tipado:</span> Contratos y tipos
-                TypeScript compartidos entre la API backend, el panel web y la PWA.
-              </li>
-              <li className="list-disc">
-                <span className="font-medium">Offline-First:</span> Sincronización en
-                segundo plano para garantizar continuidad de ventas en caso de microcortes de red.
-              </li>
-            </ul>
-          </div>
-
-          {/* Project 3: Mi Partido */}
-          <div className="flex flex-col gap-1.5">
-            <EntryHeader
-              title={`${miPartido.name} — Aplicación Móvil de Gestión Deportiva`}
-              meta="2024"
-              badge="Publicado"
-            />
-            <p className="text-xs leading-relaxed text-neutral-700">
-              <span className="font-medium text-neutral-900">Arquitectura:</span>{" "}
-              Desarrollo de aplicación móvil multiplataforma para Android e iOS
-              con Kotlin Multiplatform (KMP) y Compose Multiplatform, compartiendo
-              lógica de negocio y UI nativa. Panel web administrativo con mapas
-              interactivos en Leaflet para gestión de reservas de canchas en Mendoza.
-            </p>
-          </div>
-        </section>
-
-        {/* 4. Previous Professional Experience */}
-        <section className="flex flex-col gap-3 print:break-inside-avoid">
-          <Heading>Experiencia Laboral Previa (Habilidades Laborales)</Heading>
-          {experience
-            .filter((job) => !job.role.includes("Software Developer"))
-            .map((job) => (
-              <div key={`${job.org}-${job.role}`} className="flex flex-col gap-1">
-                <EntryHeader title={job.role} meta={job.period} />
-                <p className="font-mono text-[11px] text-neutral-600 font-medium">
-                  {job.org}
+          <div className="flex flex-col gap-2">
+            {cvExperiences.map((exp) => (
+              <div key={exp.title} className="flex flex-col gap-0.5">
+                <div className="flex flex-wrap items-baseline justify-between gap-1">
+                  <h3 className="text-[11.5px] font-bold text-neutral-950 leading-snug">
+                    {exp.title}
+                  </h3>
+                  <span className="text-[10px] text-neutral-500 font-normal">
+                    {exp.periodAndCompany}
+                  </span>
+                </div>
+                <p className="text-[10px] leading-snug text-neutral-700">
+                  {exp.description}
                 </p>
-                <ul className="flex flex-col gap-0.5 pl-4 text-xs leading-relaxed text-neutral-700">
-                  {job.bullets.map((bullet) => (
+                <ul className="flex flex-col gap-0.5 pl-4 text-[10px] leading-snug text-neutral-700">
+                  {exp.bullets.map((bullet) => (
                     <li key={bullet} className="list-disc">
                       {bullet}
                     </li>
@@ -246,58 +220,82 @@ export default function CvPage() {
                 </ul>
               </div>
             ))}
-        </section>
-
-        {/* 5. Hard Skills / Tech Stack */}
-        <section className="flex flex-col gap-2.5 print:break-inside-avoid">
-          <Heading>Competencias Técnicas (Hard Skills)</Heading>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs">
-            {skills.map((group) => (
-              <div key={group.area} className="flex flex-col gap-0.5">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">
-                  {group.area}
-                </span>
-                <span className="text-neutral-800 leading-snug">
-                  {group.items.join(" · ")}
-                </span>
-              </div>
-            ))}
           </div>
         </section>
 
-        {/* 6. Languages */}
-        <section className="flex flex-col gap-2 print:break-inside-avoid">
-          <Heading>Idiomas</Heading>
-          <div className="flex flex-col gap-1 text-xs">
-            {languages.map((language) => (
-              <div key={language.name} className="flex flex-wrap gap-2 items-baseline">
-                <span className="font-semibold text-neutral-900">{language.name}:</span>
-                <span className="text-neutral-700">{language.level}</span>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Divider */}
+        <HorizontalDivider />
 
-        {/* 7. Repositories & Verification */}
-        <section className="flex flex-col gap-2 print:break-inside-avoid">
-          <Heading>Código Fuente & Repositorios de Referencia</Heading>
-          <ul className="flex flex-col gap-1 text-xs">
-            {idNight.repos.map((repo) => (
-              <li key={repo.name} className="flex flex-wrap items-baseline gap-1 text-neutral-700">
-                <span className="font-mono font-medium text-neutral-900">{repo.name}:</span>
-                <a
-                  href={repo.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-mono text-[11px] text-neutral-600 underline underline-offset-2"
-                >
-                  {repo.url.replace("https://", "")}
-                </a>
-                <span className="text-neutral-500 text-[11px]">({repo.note})</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {/* 3 & 4. Educación y Habilidades */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start print:break-inside-avoid">
+          {/* Educación (Left ~42%) */}
+          <section className="md:col-span-5 flex flex-col gap-1">
+            <SectionHeading>Educación</SectionHeading>
+            <div className="flex flex-col gap-1.5">
+              {cvEducation.map((edu) => (
+                <div key={edu.degree} className="flex flex-col">
+                  <h3 className="text-[11px] font-bold text-neutral-950 leading-snug">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-[10px] text-neutral-600 font-medium">
+                    {edu.institution}
+                  </p>
+                  <p className="text-[9.5px] text-neutral-500 font-normal">
+                    {edu.periodAndStatus}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Habilidades (Right ~58%) */}
+          <section className="md:col-span-7 flex flex-col gap-1">
+            <SectionHeading>Habilidades</SectionHeading>
+            <div className="flex flex-col gap-0.5 text-[10px] leading-snug text-neutral-700">
+              {cvSkills.map((skill) => (
+                <p key={skill.name}>
+                  <strong className="font-semibold text-neutral-950">
+                    {skill.name}:{" "}
+                  </strong>
+                  {skill.description}
+                </p>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Divider */}
+        <HorizontalDivider />
+
+        {/* 5 & 6. Idiomas y Logros Destacados */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start print:break-inside-avoid">
+          {/* Idiomas (Left ~42%) */}
+          <section className="md:col-span-5 flex flex-col gap-1">
+            <SectionHeading>Idiomas</SectionHeading>
+            <div className="flex flex-col gap-0.5 text-[10px] text-neutral-700">
+              {cvLanguages.map((lang) => (
+                <p key={lang.language}>
+                  <strong className="font-semibold text-neutral-950">
+                    {lang.language}:{" "}
+                  </strong>
+                  {lang.level}
+                </p>
+              ))}
+            </div>
+          </section>
+
+          {/* Logros Destacados (Right ~58%) */}
+          <section className="md:col-span-7 flex flex-col gap-1">
+            <SectionHeading>Logros Destacados</SectionHeading>
+            <ul className="flex flex-col gap-0.5 pl-4 text-[10px] leading-snug text-neutral-700">
+              {cvAchievements.map((ach) => (
+                <li key={ach} className="list-disc">
+                  {ach}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </article>
     </main>
   );

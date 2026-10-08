@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { profile, productEvolution } from "@/content/profile";
+import { profile, productEvolution, certifications } from "@/content/profile";
 import { TechIcon } from "@/components/ui/tech-icons";
 
 const SYSTEM_LAYERS = [
@@ -107,6 +107,61 @@ export function About() {
                 </span>
               </div>
             </div>
+
+            {/* Certifications Block */}
+            {certifications.length > 0 && (
+              <div className="flex flex-col gap-2 pt-1">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                  Certificación oficial
+                </span>
+                {certifications.map((cert) => (
+                  <div
+                    key={cert.credentialId}
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-border bg-surface p-4 transition-all hover:border-amber-500/40 hover:bg-surface-raised"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-400">
+                        <TechIcon name="python" size={20} />
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h4 className="text-xs sm:text-sm font-bold text-foreground">
+                            {cert.title}
+                          </h4>
+                          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-400">
+                            {cert.hours} · {cert.platform}
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted">
+                          {cert.issuer} · {cert.date}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 shrink-0 pt-2 sm:pt-0">
+                      <a
+                        href={cert.pdf}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex min-h-[36px] items-center gap-1.5 rounded-lg border border-border-strong bg-surface px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+                      >
+                        <span>Ver certificado</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                      <a
+                        href={cert.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex min-h-[36px] items-center gap-1.5 rounded-lg border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
+                      >
+                        <span>Validar online</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Direct Links */}
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">

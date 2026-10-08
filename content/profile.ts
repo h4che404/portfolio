@@ -54,6 +54,21 @@ export const productEvolution = [
   },
 ] as const;
 
+export const certifications = [
+  {
+    title: "Universidad Python con Frameworks Django, Flask, etc.",
+    issuer: "Global Mentoring · Ing. Ubaldo Acosta",
+    platform: "Udemy",
+    date: "14 de Marzo de 2023",
+    hours: "71 horas en total",
+    credentialId: "UC-25814785-394f-46f7-9e95-0c274699fcb9",
+    url: "https://ude.my/UC-25814785-394f-46f7-9e95-0c274699fcb9",
+    image: "/certificates/python-udemy.png",
+    pdf: "/certificates/python-udemy.pdf",
+    skills: ["Python", "Django", "Flask", "POO", "Bases de Datos", "APIs REST"],
+  },
+] as const;
+
 // Fill this in to render the Education block on the CV page.
 // Leaving it empty simply hides the section.
 export const education = [
@@ -86,14 +101,6 @@ export const experience = [
     bullets: [
       "Venta directa, detección de necesidades de clientes, administración operativa y resolución de situaciones complejas.",
       "Desarrollo de habilidades de comunicación interpersonal, empatía, organización del tiempo y trabajo orientado a resultados.",
-    ],
-  },
-  {
-    role: "Atención telefónica y resolución de casos",
-    org: "Call center",
-    period: "2026",
-    bullets: [
-      "Gestión de requerimientos bajo métricas de calidad y volumen, seguimiento metódico de incidentes y registro riguroso de información.",
     ],
   },
 ] as const;
@@ -181,3 +188,114 @@ export const skills = [
     ],
   },
 ] as const;
+
+export const cvProfile = {
+  name: profile.name,
+  roleSubtitle: "Software Developer | Backend & APIs | IA aplicada",
+  location: profile.location,
+  email: profile.email,
+  phone: "+54 9 263 461-6717",
+  portfolioLabel: "portfolio web",
+  portfolioUrl: "https://portfolio-liard-two-ntjfmwxolk.vercel.app",
+  githubLabel: "github.com/h4che404",
+  githubUrl: profile.github,
+  linkedinLabel: "linkedin.com/in/juancruzelias",
+  linkedinUrl: "https://linkedin.com/in/juancruzelias",
+  summary:
+    "Estudiante avanzado de Programación en la UTN (a 4 materias de finalizar) enfocado en el desarrollo de productos de software de punta a punta. Experiencia práctica demostrable en arquitectura backend (.NET, Spring Boot, Fastify), persistencia relacional (PostgreSQL), mobile multiplataforma (Kotlin Multiplatform) e integración de IA aplicada (Python/ONNX). Perfil con autonomía técnica y foco en llevar sistemas reales a producción.",
+} as const;
+
+export const cvExperiences = [
+  {
+    title: "Lead Software Developer — ID-Night",
+    periodAndCompany: "Proyecto propio en producción — 2024 – Presente",
+    description:
+      "Sistema integral de control de acceso y validación biométrica con IA para eventos y locales de concurrencia masiva.",
+    bullets: [
+      "Backend distribuido en .NET 10 con Clean Architecture, EF Core y PostgreSQL desplegado en Azure Container Apps.",
+      "Microservicio de reconocimiento facial 1:1 en Python/FastAPI optimizado para inferencia local con ONNX (YuNet/SFace) y PWA con QR dinámico.",
+    ],
+  },
+  {
+    title: "Full Stack Developer — Luppi",
+    periodAndCompany: "Proyecto propio — MVP en desarrollo y validación — 2025 – Presente",
+    description:
+      "Plataforma SaaS multitenant orientada a centros comerciales digitales y comercios barriales con soporte POS.",
+    bullets: [
+      "Monorepo en Turborepo con Fastify (Node.js), persistencia con Drizzle ORM sobre PostgreSQL y esquemas tipados compartidos.",
+      "PWA offline-first con Workbox y sincronización en background para garantizar continuidad operativa ante microcortes de red.",
+    ],
+  },
+  {
+    title: "Mobile & Backend Developer — Mi Partido",
+    periodAndCompany: "Proyecto propio publicado — 2024",
+    description:
+      "Aplicación móvil cross-platform y panel web para gestión deportiva y reserva de canchas en Mendoza, validado con usuarios.",
+    bullets: [
+      "App móvil para Android e iOS en Kotlin Multiplatform (KMP) y Compose, compartiendo el 100% de la lógica de negocio.",
+      "Panel web administrativo para complejos con mapas en Leaflet, calendario de reservas y API RESTful con despliegue en la nube.",
+    ],
+  },
+] as const;
+
+export const cvEducation = [
+  {
+    degree: "Tecnicatura Universitaria en Programación",
+    institution: "Universidad Tecnológica Nacional (UTN) — Facultad Regional Mendoza",
+    periodAndStatus: "2023 – Actualidad · En curso (4 materias restantes)",
+  },
+  {
+    degree: "Formación complementaria: Python de Cero a Experto (+71 hrs)",
+    institution: "Global Mentoring · Cert. UC-25814785",
+    periodAndStatus: "2023",
+  },
+] as const;
+
+export const cvSkills = [
+  {
+    name: "Backend",
+    description:
+      "C#, .NET 10, ASP.NET Core, FastAPI, Node.js, Java / Spring Boot, REST APIs, Clean Architecture.",
+  },
+  {
+    name: "Databases & Cloud",
+    description:
+      "PostgreSQL, SQL Server, Drizzle ORM, EF Core, Docker, Azure Container Apps, CI/CD (GitHub Actions).",
+  },
+  {
+    name: "Frontend & Mobile",
+    description:
+      "TypeScript, React 19, Next.js, Tailwind CSS, Kotlin Multiplatform (KMP), Compose Multiplatform.",
+  },
+  {
+    name: "AI & Security",
+    description:
+      "Python, ONNX Runtime, OpenCV, YuNet, SFace, JWT, roles RBAC, biometría 1:1.",
+  },
+  {
+    name: "Herramientas & Prácticas",
+    description:
+      "Git, GitHub, principios SOLID, diseño modular de dominio, Scrum.",
+  },
+] as const;
+
+export const cvLanguages = [
+  {
+    language: "Inglés",
+    level: "Técnico / B2 (Lectura fluida de documentación, APIs y especificaciones técnicas)",
+  },
+  {
+    language: "Español",
+    level: "Nativo",
+  },
+] as const;
+
+export const cvAchievements = [
+  "3 productos de software diseñados, construidos y desplegados de punta a punta (ID-Night, Luppi y Mi Partido).",
+  "Arquitecturas backend modulares con .NET, FastAPI y Fastify con persistencia relacional en PostgreSQL.",
+  "Desarrollo móvil multiplataforma para Android e iOS compartiendo lógica nativa con Kotlin Multiplatform.",
+  "Implementación de IA aplicada y visión computacional para inferencia local con ONNX y OpenCV.",
+] as const;
+
+
+
