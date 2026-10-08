@@ -75,7 +75,7 @@ export const education = [
   {
     title: "Tecnicatura Universitaria en Programación (TUP)",
     place: "Universidad Tecnológica Nacional (UTN) — Facultad Regional Mendoza",
-    period: "2023 – Actualidad (En curso — 4 materias para finalizar)",
+    period: "2025 – Actualidad (En curso)",
     detail:
       "Formación académica en ingeniería de software: Programación Orientada a Objetos (POO), Algoritmos y Estructuras de Datos, Arquitectura de Software, Clean Architecture y Patrones de Diseño (SOLID), Modelado y Gestión de Bases de Datos Relacionales (SQL), Análisis y Diseño de Sistemas con UML, Metodologías Ágiles (Scrum), Testing y Verificación de Software, Matemática y Estadística aplicada.",
   },
@@ -202,7 +202,7 @@ export const cvProfile = {
   linkedinLabel: "linkedin.com/in/juancruzelias",
   linkedinUrl: "https://linkedin.com/in/juancruzelias",
   summary:
-    "Estudiante avanzado de Programación en la UTN (a 4 materias de finalizar) enfocado en el desarrollo de productos de software de punta a punta. Experiencia práctica demostrable en arquitectura backend (.NET, Spring Boot, Fastify), persistencia relacional (PostgreSQL), mobile multiplataforma (Kotlin Multiplatform) e integración de IA aplicada (Python/ONNX). Perfil con autonomía técnica y foco en llevar sistemas reales a producción.",
+    "Estudiante avanzado de Programación en la UTN enfocado en el desarrollo de productos de software de punta a punta. Experiencia práctica demostrable en arquitectura backend (.NET, Spring Boot, Fastify), persistencia relacional (PostgreSQL), mobile multiplataforma (Kotlin Multiplatform) e integración de IA aplicada (Python/ONNX). Perfil con autonomía técnica y foco en llevar sistemas reales a producción.",
 } as const;
 
 export const cvExperiences = [
@@ -242,7 +242,7 @@ export const cvEducation = [
   {
     degree: "Tecnicatura Universitaria en Programación",
     institution: "Universidad Tecnológica Nacional (UTN) — Facultad Regional Mendoza",
-    periodAndStatus: "2023 – Actualidad · En curso (4 materias restantes)",
+    periodAndStatus: "2025 – Actualidad · En curso",
   },
   {
     degree: "Formación complementaria: Python de Cero a Experto (+71 hrs)",
